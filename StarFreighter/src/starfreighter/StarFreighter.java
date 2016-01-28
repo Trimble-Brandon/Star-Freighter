@@ -19,6 +19,7 @@ public class StarFreighter
      */
     public static void main(String[] args) 
     {
+        //Game Object
         Game game = new Game();
         
         game.setNoPeople(1);
@@ -28,6 +29,15 @@ public class StarFreighter
         String gameInfo = game.toString();
         
         System.out.println(gameInfo);
+        
+        //Map Object
+        Map map = new Map();
+        
+        map.setLocation("Paradise!");
+        
+        String mapInfo = map.toString();
+        
+        System.out.println(mapInfo);
         
     }
     

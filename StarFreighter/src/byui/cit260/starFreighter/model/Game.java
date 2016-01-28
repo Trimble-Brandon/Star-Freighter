@@ -15,8 +15,8 @@ import java.util.Objects;
 public class Game implements Serializable 
 {
     //Class instance variables
-    private Integer noPeople = 0;
-    private Double totalTime = 0.0;
+    private Integer noPeople;
+    private Double totalTime;
 
     //Default constructor
     public Game() 
@@ -24,7 +24,7 @@ public class Game implements Serializable
         
     }
 
-    //Save Game
+    //
     @Override
     public String toString() {
         return "game{" + "noPeople=" + noPeople + ", totalTime=" + totalTime + '}';
@@ -39,21 +39,27 @@ public class Game implements Serializable
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
+    public boolean equals(Object obj) 
+    {
+        if (this == obj) 
+        {
             return true;
         }
-        if (obj == null) {
+        if (obj == null) 
+        {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        if (getClass() != obj.getClass()) 
+        {
             return false;
         }
         final Game other = (Game) obj;
-        if (!Objects.equals(this.noPeople, other.noPeople)) {
+        if (!Objects.equals(this.noPeople, other.noPeople)) 
+        {
             return false;
         }
-        if (!Objects.equals(this.totalTime, other.totalTime)) {
+        if (!Objects.equals(this.totalTime, other.totalTime)) 
+        {
             return false;
         }
         return true;
@@ -63,22 +69,26 @@ public class Game implements Serializable
     
     
     //Getters and Setters
-    public Integer getNoPeople() {
+    public Integer getNoPeople() 
+    {
         return noPeople;
     }
 
-    public void setNoPeople(Integer noPeople) {
+    public void setNoPeople(Integer noPeople) 
+    {
         this.noPeople = noPeople;
     }
 
-    public Double getTotalTime() {
+    public Double getTotalTime() 
+    {
+            
         return totalTime;
     }
 
-    public void setTotalTime(Double totalTime) {
+    public void setTotalTime(Double totalTime) 
+    {
         this.totalTime = totalTime;
     }
-    
     
     
 }
