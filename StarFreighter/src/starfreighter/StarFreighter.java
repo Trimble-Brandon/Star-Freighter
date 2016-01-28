@@ -5,17 +5,30 @@
  */
 package starfreighter;
 
+import byui.cit260.starFreighter.model.*;
+
 /**
  *
  * @author Joseph
  */
-public class StarFreighter {
+public class StarFreighter 
+{
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        System.out.println("Hello Brandon!");
+    public static void main(String[] args) 
+    {
+        Game game = new Game();
+        
+        game.setNoPeople(1);
+        
+        game.setTotalTime(0.00);
+        
+        String gameInfo = game.toString();
+        
+        System.out.println(gameInfo);
+        
     }
     
 }
