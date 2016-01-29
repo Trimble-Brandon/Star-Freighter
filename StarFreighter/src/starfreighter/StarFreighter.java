@@ -24,6 +24,7 @@ public class StarFreighter
         
         game.setNoPeople(1);
         game.setTotalTime(0.00);
+        
         String gameInfo = game.toString();
         
         System.out.println(gameInfo);
@@ -32,6 +33,7 @@ public class StarFreighter
         Map map = new Map();
         
         map.setLocation("Paradise!");
+        
         String mapInfo = map.toString();
         
         System.out.println(mapInfo);
@@ -83,6 +85,59 @@ public class StarFreighter
         
         String tSceneInfo = tScene.toString();
         System.out.println(tSceneInfo);
+        
+        //Player Object test
+        Player player = new Player();
+        
+        player.setName("Walsh");
+        player.setTopScore(9999999.9);
+        
+        String playerInfo = player.toString();
+        System.out.println(playerInfo);
+        
+        //Character Object test
+        GameCharacter character = new GameCharacter(); //had to change class name from 'Character'.
+        
+        character.setName("Kylo Ren");
+        character.setDescription("Kylo Ren wants to be like Darth Vader.");
+        character.setAttributes("Cook");
+        
+        String characterInfo = character.toString();
+        System.out.println(characterInfo);
+        
+        //Location Object test
+        Location location = new Location();
+        
+        location.setLocationChoice(1);
+        location.setLocationName("Miranda");
+        location.setDescription("The world where the Reavers were created.");
+        
+        String locationInfo = location.toString();
+        System.out.println(locationInfo);
+        
+        //JobTypeScene Object test
+        JobTypeScene jScene = new JobTypeScene();
+        
+        jScene.setDescription("Haul Freight");
+        jScene.setTimeToComplete(5.0);
+        jScene.setExpGained(25);
+        
+        String jSceneInfo = jScene.toString();
+        System.out.println(jSceneInfo);
+        
+        //RepairTypeScene Object test
+        RepairTypeScene rScene = new RepairTypeScene();
+        
+        rScene.setDescription("Repair the Engines!");
+        rScene.setTimeToComplete(24.0);
+        rScene.setCost(5000.00);
+        rScene.setSkill(3);
+        rScene.setExpGained(50);
+        rScene.setAmountRepaired(125.0);
+        
+        String rSceneInfo = rScene.toString();
+        System.out.println(rSceneInfo);
+        
     }
     
 }
