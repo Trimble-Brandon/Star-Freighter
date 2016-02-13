@@ -9,6 +9,131 @@ package byui.cit260.starFreighter.control;
  *
  * @author Brandon
  */
-public class JobControl {
+public class JobControl 
+{   
+    public int calcCorrectDiff(int difficulty, int skill)
+    {
+       //variables
+       int cDiff = 0;
     
+       if (difficulty < 1 || difficulty > 10 || skill < 1 || skill > 10)
+       {
+               return -1;
+       }
+       else
+       {
+           cDiff = difficulty - skill;
+           
+           if (cDiff <= 0)
+           {
+               return 1;
+           }
+           else
+           {
+               return cDiff;
+           }
+       }
+    }
+    
+    public int calcCurrencyReward(int cDiff)
+    {
+        //variables
+        int cReward = 0;
+        
+        //calculation
+        if (cDiff == 1)
+        {
+            cReward = 15;
+        }
+        else if (cDiff > 1 && cDiff < 4)
+        {
+            cReward = 25;
+        }
+        else if (cDiff > 3 && cDiff < 6)
+        {
+            cReward = 50;
+        }
+        else if (cDiff > 5 && cDiff < 8)
+        {
+            cReward = 100;
+        }
+        else if (cDiff > 7 && cDiff < 10)
+        {
+            cReward = 200;
+        }
+        else
+        {
+            cReward = 500;
+        }
+        
+        return cReward; 
+    }
+    
+    public String calcItemReward(int cDiff)
+    {
+        //variables
+        String iReward = null;
+        
+        //calculation
+        if (cDiff == 1)
+        {
+            iReward = "*Squirt gun*";
+        }
+        else if (cDiff > 1 && cDiff < 4)
+        {
+            iReward = "*Pistol*";
+        }
+        else if (cDiff > 3 && cDiff < 6)
+        {
+            iReward = "*Pistol & Sword*";
+        }
+        else if (cDiff > 5 && cDiff < 8)
+        {
+            iReward = "*Rifle*";
+        }
+        else if (cDiff > 7 && cDiff < 10)
+        {
+            iReward = "*Hand Cannon*";
+        }
+        else
+        {
+            iReward = "*Lightsaber ===|-----------*";
+        }
+        
+        return iReward;
+    }
+    
+    public int calcExpReward(int cDiff)
+    {
+        //variables
+        int xpReward = 0;
+        
+        //calculations
+        if (cDiff == 1)
+        {
+            xpReward = 5;
+        }
+        else if (cDiff > 1 && cDiff < 4)
+        {
+            xpReward = 15;
+        }
+        else if (cDiff > 3 && cDiff < 6)
+        {
+            xpReward = 30;
+        }
+        else if (cDiff > 5 && cDiff < 8)
+        {
+            xpReward = 50;
+        }
+        else if (cDiff > 7 && cDiff < 10)
+        {
+            xpReward = 100;
+        }
+        else
+        {
+            xpReward = 200;
+        }
+        
+        return xpReward;
+    }
 }
