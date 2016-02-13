@@ -9,6 +9,15 @@ package byui.cit260.starFreighter.control;
  *
  * @author Brandon
  */
-public class InventoryControl {
+public class InventoryControl 
+{
+    public int addToInventory(String inventoryItem, int quantity)
+    {
+        return 0; 
+    }
     
+    public int removeFromInventory(String inventoryItem, int quantity)
+    {
+        return 0;
+    }
 }
