@@ -30,7 +30,7 @@ public class StarFreighter
         System.out.println(gameInfo);
         
         //Map Object test
-        Map map = new Map();
+        GameMap map = new GameMap();
         
         map.setLocation("Paradise!");
         

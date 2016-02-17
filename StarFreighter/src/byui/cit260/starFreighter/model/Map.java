@@ -14,7 +14,7 @@ import java.util.Objects;
 public class Map 
 {
     //Class instance variables
-    private String location;
+    private Location location;
 
     //Default Constructor
     public Map() 
@@ -60,12 +60,12 @@ public class Map
     }
 
     //
-    public String getLocation() 
+    public Location getLocation() 
     {
         return location;
     }
 
-    public void setLocation(String location) 
+    public void setLocation(Location location) 
     {
         this.location = location;
     }

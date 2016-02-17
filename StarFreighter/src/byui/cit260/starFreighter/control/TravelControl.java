@@ -7,8 +7,19 @@ package byui.cit260.starFreighter.control;
 
 /**
  *
- * @author Brandon
+ * @author Joseph
  */
 public class TravelControl {
-    
+    public int calcTime(int skill, int upgrades, int distance) {
+        if (skill > 10 || skill < 0 || upgrades > 10 || upgrades < 0 || distance < 1) {
+            return - 1;
+        } else {
+            int time = distance - (skill + upgrades);
+            if (time < 0) {
+                return 0;
+            } else {
+                return time;
+            }
+        }        
+    }
 }

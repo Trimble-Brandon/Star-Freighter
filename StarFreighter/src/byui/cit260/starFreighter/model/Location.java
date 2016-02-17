@@ -14,7 +14,7 @@ import java.util.Objects;
 public class Location 
 {
     //Class instance variables
-    private Integer locationChoice; //Changed from simply location to better explain what it does
+    private Integer location;
     private String locationName;
     private String description;
     
@@ -28,14 +28,14 @@ public class Location
     @Override
     public String toString() 
     {
-        return "Location{" + "locationChoice=" + locationChoice + ", locationName=" + locationName + ", description=" + description + '}';
+        return "Location{" + "locationChoice=" + location + ", locationName=" + locationName + ", description=" + description + '}';
     }
 
     @Override
     public int hashCode() 
     {
         int hash = 5;
-        hash = 59 * hash + Objects.hashCode(this.locationChoice);
+        hash = 59 * hash + Objects.hashCode(this.location);
         hash = 59 * hash + Objects.hashCode(this.locationName);
         hash = 59 * hash + Objects.hashCode(this.description);
         return hash;
@@ -65,7 +65,7 @@ public class Location
         {
             return false;
         }
-        if (!Objects.equals(this.locationChoice, other.locationChoice)) 
+        if (!Objects.equals(this.location, other.location)) 
         {
             return false;
         }
@@ -73,14 +73,14 @@ public class Location
     }
     
     //
-    public Integer getLocationChoice() 
+    public Integer getLocation() 
     {
-        return locationChoice;
+        return location;
     }
 
-    public void setLocationChoice(Integer locationChoice) 
+    public void setLocation(Integer location) 
     {
-        this.locationChoice = locationChoice;
+        this.location = location;
     }
 
     public String getLocationName() 
