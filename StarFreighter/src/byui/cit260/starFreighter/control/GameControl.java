@@ -5,10 +5,33 @@
  */
 package byui.cit260.starFreighter.control;
 
+import byui.cit260.starFreighter.model.Player;
+import starfreighter.StarFreighter;
+
 /**
  *
  * @author Brandon
  */
-public class GameControl {
-    
+public class GameControl 
+{
+    public static Player createPlayer(String playerName)
+    {
+        if (playerName == null)
+        {
+            return null;
+        }
+        
+        Player player = new Player();
+        player.setName(playerName);
+        
+        StarFreighter.setPlayer(player);
+        
+        return player;
+    }
+
+    public static void newGame(Player player) 
+    {
+        System.out.println("newGame has been called!");
+    }
+  
 }
