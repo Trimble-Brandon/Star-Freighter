@@ -15,37 +15,34 @@ import starfreighter.StarFreighter;
  */
 public class MainMenuView 
 {
-    private final String MENU = "\n"
-            + "\n--------------------------------------------------------------"
-            + "\n| Main Menu                                                  |"
-            + "\nG - Start game"
-            + "\nH - Get help on how to play the game"
-            + "\nS - Save game"
-            + "\nE - Exit"
-            + "\n---------------------------------------------------------------";
+    private String menu;
     
-    static void displayMainMenuView() 
-    {
-        
-    }
-
-    void displayMenu() 
-    {
-        char selection = ' ';
-        do
-        {
-            System.out.println(MENU);
-            
-            String input = this.getInput();
-            selection = input.charAt(0);
-            
-            this.doAction(selection);
-            
-        }
-        while (selection != 'E');
+    public MainMenuView() {
+        this.menu = "\n"
+                    + "\n--------------------------------------------------------------"
+                    + "\n| Main Menu                                                  |"
+                    + "\nN - Start New game                                           |"
+                    + "\nG - Start Existing game                                      |"
+                    + "\nH - Get help on how to play the game                         |"
+                    + "\nS - Save game                                                |"
+                    + "\nE - Exit                                                     |"
+                    + "\n--------------------------------------------------------------";
     }
     
-    public String getInput() 
+    public void displayMainMenuView() 
+    {
+        boolean done = false;
+        do {
+            System.out.println(menu);
+            String menuOption = this.getMenuOption();
+            if (menuOption.toUpperCase().equals("E")) {
+                return;
+            }
+            done = this.doAction(menuOption);
+        } while (!done);
+    }
+    
+    public String getMenuOption() 
     {
         Scanner keyboard = new Scanner(System.in);
         String value = "";
@@ -54,7 +51,7 @@ public class MainMenuView
         while(!valid)
         {
             System.out.println("Select menu item");
-            value = keyboard.nextLine();
+            value = keyboard.nextLine().toUpperCase();
             value = value.trim();
             
             if(value.length() < 1)
@@ -68,28 +65,26 @@ public class MainMenuView
         return value;
     }
 
-    private void doAction(char choice) 
+    private boolean doAction(String menuOption) 
     {
-        switch(choice)
+        switch(menuOption)
         {
-            case 'N': 
+            case "N":
                 this.startNewGame();
                 break;
-            case 'G':
+            case "G":
                 this.startExistingGame();
                 break;
-            case 'H':
+            case "H":
                 this.displayHelpMenu();
                 break;
-            case 'S':
+            case "S":
                 this.saveGame();
                 break;
-            case 'E':
-                return;
             default:
                 System.out.println("Invalid selection. Please try again.");
-                break;
         }
+        return false;
     }
 
     private void startNewGame() 
@@ -105,7 +100,8 @@ public class MainMenuView
 
     private void displayHelpMenu() 
     {
-        System.out.println("displayHelpMenu has been called.");
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.displayMenu();
     }
 
     private void saveGame() 

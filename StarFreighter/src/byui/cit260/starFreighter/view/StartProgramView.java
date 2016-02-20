@@ -22,17 +22,6 @@ public class StartProgramView
         this.promptMessage = "\nPlease enter your name: ";
     
         this.displayBanner();
-        
-        String playerName = this.getPlayerName();
-        
-        Player player = GameControl.createPlayer(playerName);
-        
-        this.displayWelcomeMessage(player);
-        
-        MainMenuView mainMenu = new MainMenuView();
-        
-        mainMenu.displayMenu();
-    
     }
 
     public void displayBanner() 
@@ -70,11 +59,11 @@ public class StartProgramView
     {
         Scanner keyboard = new Scanner(System.in);
         String value = "";
-        
         boolean valid = false;
+        
         while(!valid)
         {
-            System.out.println(this.promptMessage);
+            System.out.println("\n" + this.promptMessage);
             value = keyboard.nextLine();
             value = value.trim();
             
@@ -97,11 +86,11 @@ public class StartProgramView
             
             return false;
         }
+        
         Player player = GameControl.createPlayer(playerName);
-        if(player == null)
+        if (player == null)
         {
             System.out.println("There was an error creating the player.");
-            
             return false;
         }
         this.displayNextView(player);
@@ -111,22 +100,14 @@ public class StartProgramView
 
     private void displayNextView(Player player) 
     {
-        
-        
-        MainMenuView mainMenu = new MainMenuView();
-                
-        MainMenuView.displayMainMenuView();
-    }
-
-    private void displayWelcomeMessage(Player player) 
-    {
         System.out.println("\n================================================="
                          + "\n Welcome to the game " + player.getName()
                          + "\n We hope you have fun!"
                          + "\n================================================="
                          );
+        
+        MainMenuView mainMenu = new MainMenuView();
+
+        mainMenu.displayMainMenuView();
     }
-    
-    
-    
 }
