@@ -13,24 +13,66 @@ import java.util.Scanner;
  */
 class GameMenuView 
 {
-
-    void displayMenu() 
+    private final String menu;
+    
+    public GameMenuView()
     {
-        LaunchShipView launchShip = new LaunchShipView();
+        this.menu = "\nTesting LaunchShipView. Would you like to launch?(y/n): ";
+    }
+    
+     public void displayMenu() 
+    {
+        boolean done = false;
+        do {
+            System.out.println(menu);
+            String menuOption = this.getMenuOption();
+            if (menuOption.toUpperCase().equals("Q")) 
+            {
+                return;
+            }
+            done = this.doAction(menuOption);
+        } while (!done);
+    }
+     
+     public String getMenuOption() 
+    {
+        Scanner keyboard = new Scanner(System.in);
         String value = "";
         
-        System.out.println("displayMenu called!");
-        
-        System.out.println("Test Launch Ship? (y/n): ");
-        
-        Scanner keyboard = new Scanner(System.in);
-        value = keyboard.nextLine();
-        value = value.trim();
-        
-        if (value == "y")
+        boolean valid = false;
+        while(!valid)
         {
-            launchShip.displayLaunch();
-        }   
+            System.out.println("(y/n)");
+            value = keyboard.nextLine().toUpperCase();
+            value = value.trim();
+            
+            if(value.length() < 1)
+            {
+                System.out.println("What you have entered is invalid."
+                        + "\nPlease try again");
+                continue;
+            }
+            valid = true;
+        }
+        return value;
+    }
+     
+     private boolean doAction(String menuOption) 
+    {
+        switch(menuOption)
+        {
+            case "Y":
+                LaunchShipView launchShip = new LaunchShipView();
+                launchShip.displayLaunch();
+                break;
+            case "N":
+                MainMenuView mainMenu = new MainMenuView();
+                mainMenu.displayMainMenuView();
+                break;
+            default:
+                System.out.println("Invalid selection. Please try again.");
+        }
+        return false;
     }
     
 }
