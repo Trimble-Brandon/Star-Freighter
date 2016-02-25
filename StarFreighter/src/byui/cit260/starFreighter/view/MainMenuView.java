@@ -79,7 +79,7 @@ public class MainMenuView
                 this.displayHelpMenu();
                 break;
             case "S":
-                this.saveGame();
+                this.displaySaveMenu();
                 break;
             default:
                 System.out.println("Invalid selection. Please try again.");
@@ -94,7 +94,8 @@ public class MainMenuView
         gameMenu.displayMenu();
     }
 
-    private void startExistingGame() {
+    private void startExistingGame() 
+    {
         System.out.println("startExistingGame has been called.");
     }
 
@@ -104,8 +105,10 @@ public class MainMenuView
         helpMenu.displayMenu();
     }
 
-    private void saveGame() 
+    private void displaySaveMenu() 
     {
+        SaveMenuView saveMenu = new SaveMenuView();
+        saveMenu.displayMenu();
         System.out.println("saveGame has been called.");
     }
     

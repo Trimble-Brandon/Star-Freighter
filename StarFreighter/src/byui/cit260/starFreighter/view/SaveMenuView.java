@@ -9,38 +9,31 @@ import java.util.Scanner;
 
 /**
  *
- * @author Joseph
+ * @author Brandon
  */
-public class HelpMenuView 
+public class SaveMenuView 
 {
     private final String menu;
-    private final String infoText;
-    private final String movementText;
-    private final String captainText;
-    private final String incomeText;
-    private final String shipText;
-    private final String shopsText;
+    private final String saveGameText;
+    private final String loadGameText;
+    private final String backText;
+    private final String quit2MainText;
     
-    public HelpMenuView() 
+    public SaveMenuView() 
     {
         this.menu = "\n"
                     + "\n--------------------------------------------------------------"
-                    + "\n| Help Menu                                                  |"
-                    + "\nG - Info                                                     |"
-                    + "\nM - Movement - How to move                                   |"
-                    + "\nC - Captain and Crew - Classes/Roles/Skills                  |"
-                    + "\nI - How to Make Money/Jobs Board                             |"
-                    + "\nD - Ship Details - Launch and travel                         |"
-                    + "\nR - Shops Upgrades and Repairs                               |"
-                    + "\nQ - Back to previous menu                                    |"
+                    + "\n| Save Menu                                                  |"
+                    + "\nS - Save game                                                |"
+                    + "\nL - Load game                                                |"
+                    + "\nB - Back to game menu                                        |"
+                    + "\nQ - Quit to main menu                                        |"
                     + "\n--------------------------------------------------------------";
 
-        this.infoText = "\nInfo Yay!";
-        this.movementText = "\nMovement Yay!";
-        this.captainText = "\nCaptain Yay!";
-        this.incomeText = "\nIncome Yay!";
-        this.shipText = "\nShip Yay!";
-        this.shopsText = "\nShops Yay!";
+        this.saveGameText = "\nSave game has been called";
+        this.loadGameText = "\nLoad game has been called";
+        this.backText = "\nBack to game menu has been called";
+        this.quit2MainText = "\nQuit to main menu has been called";
     }
     
     public void displayMenu() 
@@ -84,23 +77,17 @@ public class HelpMenuView
     {
         switch(menuOption)
         {
-            case "G":
-                this.displayInfo(infoText);
+            case "S":
+                this.displayInfo(saveGameText);
                 break;
-            case "M":
-                this.displayInfo(movementText);
+            case "L":
+                this.displayInfo(loadGameText);
                 break;
-            case "C":
-                this.displayInfo(captainText);
+            case "B":
+                this.displayInfo(backText);
                 break;
-            case "I":
-                this.displayInfo(incomeText);
-                break;
-            case "D":
-                this.displayInfo(shipText);
-                break;
-            case "R":
-                this.displayInfo(shopsText);
+            case "Q":
+                this.displayInfo(quit2MainText);
                 break;
             default:
                 System.out.println("Invalid selection. Please try again.");
@@ -116,4 +103,5 @@ public class HelpMenuView
         Scanner keyboard = new Scanner(System.in);
         keyboard.nextLine();
     }
+    
 }
