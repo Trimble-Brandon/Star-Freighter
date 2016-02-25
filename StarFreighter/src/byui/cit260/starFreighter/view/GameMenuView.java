@@ -25,6 +25,7 @@ class GameMenuView
         
         Scanner keyboard = new Scanner(System.in);
         value = keyboard.nextLine();
+        value = value.trim();
         
         if (value == "y")
         {
