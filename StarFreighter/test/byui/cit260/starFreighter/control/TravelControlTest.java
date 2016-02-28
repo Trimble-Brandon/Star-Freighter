@@ -27,7 +27,7 @@ public class TravelControlTest {
         int upgrades = 2;
         int distance = 7;
         TravelControl instance = new TravelControl();
-        int expResult = 4;
+        int expResult = 3;
         int result = instance.calcTime(skill, upgrades, distance);
         System.out.println(result + " -> " + expResult);
         

@@ -26,13 +26,57 @@ public class JobControlTest
     @Test
     public void testCalcCorrectDiff() 
     {
+        //test1
         System.out.println("calcCorrectDiff");
-        int difficulty = 10;
-        int skill = 6;
+        int difficulty = 3;
+        int skill = 2;
         JobControl instance = new JobControl();
         int result = instance.calcCorrectDiff(difficulty, skill);
         
         System.out.println(difficulty + ", " + skill + ", " + result);
+        
+        //test2
+        difficulty = -3;
+        skill = 3;
+        result = instance.calcCorrectDiff(difficulty, skill);
+        
+        System.out.println(difficulty + ", " + skill + ", " + result);
+        
+        //test3
+        difficulty = 0;
+        skill = 0;
+        result = instance.calcCorrectDiff(difficulty, skill);
+        
+        System.out.println(difficulty + ", " + skill + ", " + result);
+        
+        //test4
+        difficulty = 11;
+        skill = -1;
+        result = instance.calcCorrectDiff(difficulty, skill);
+        
+        System.out.println(difficulty + ", " + skill + ", " + result);
+        
+        //test5
+        difficulty = 1;
+        skill = 5;
+        result = instance.calcCorrectDiff(difficulty, skill);
+        
+        System.out.println(difficulty + ", " + skill + ", " + result);
+        
+        //test6
+        difficulty = 10;
+        skill = 6;
+        result = instance.calcCorrectDiff(difficulty, skill);
+        
+        System.out.println(difficulty + ", " + skill + ", " + result);
+        
+        //test7
+        difficulty = 2;
+        skill = 2;
+        result = instance.calcCorrectDiff(difficulty, skill);
+        
+        System.out.println(difficulty + ", " + skill + ", " + result);
+        
     }
 
     /**
