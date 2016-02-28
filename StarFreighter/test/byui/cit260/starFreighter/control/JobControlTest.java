@@ -39,42 +39,50 @@ public class JobControlTest
      * Test of calcCurrencyReward method, of class JobControl.
      */
     @Test
-    public void testCalcCurrencyReward() 
+    public int testCalcCurrencyReward() 
     {
         System.out.println("calcCurrencyReward");
-        int cDiff = 8;
+        int cDiff = 4;
         JobControl instance = new JobControl();
         int result = instance.calcCurrencyReward(cDiff);
         
         System.out.println(cDiff + ", Congratulations! You have been awarded "
                             + result + " currency!");
+        
+        return 0;
     }
 
     /**
      * Test of calcItemReward method, of class JobControl.
      */
     @Test
-    public void testCalcItemReward() {
+    public int testCalcItemReward() 
+    {
         System.out.println("calcItemReward");
-        int cDiff = 10;
+        int cDiff =4;
         JobControl instance = new JobControl();
         String result = instance.calcItemReward(cDiff);
         
         System.out.println(cDiff + ", Congratulations! You have received loot: "
                             + result);
+        
+        return 0;
     }
 
     /**
      * Test of calcExpReward method, of class JobControl.
      */
     @Test
-    public void testCalcExpReward() {
+    public int testCalcExpReward() 
+    {
         System.out.println("calcExpReward");
-        int cDiff = 10;
+        int cDiff = 4;
         JobControl instance = new JobControl();
         int result = instance.calcExpReward(cDiff);
         
         System.out.println(cDiff + ", You have gained " + result + " experience points!");
+        
+        return 0;
     }
 }
 
