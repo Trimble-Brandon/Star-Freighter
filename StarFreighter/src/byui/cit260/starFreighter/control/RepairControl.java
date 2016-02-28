@@ -9,27 +9,34 @@ package byui.cit260.starFreighter.control;
  *
  * @author Brandon
  */
-public class RepairControl {
-    public int calcTimeToComplete(int skill, int amountRepaired) {
-        if (skill < 1 || skill > 10 || amountRepaired < 1 || amountRepaired > 100) {
+public class RepairControl 
+{
+    public int calcTimeToComplete(int skill, int amountRepaired) 
+    {
+        if (skill < 1 || skill > 10 || amountRepaired < 1 || amountRepaired > 100) 
+        {
             return -1;
-        } else {
+        } else 
+        {
             return (int)Math.ceil((double)amountRepaired / skill);
         }
     }
     
-    public int calcRepair() {
+    public int calcRepair() 
+    {
         //What's this function supposed to calculate?
         return 0;
     }
     
     
-    public int calcExperience(int timeToComplete, int skill, int amountRepaired) {
+    public int calcExperience(int timeToComplete, int skill, int amountRepaired) 
+    {
         return timeToComplete + amountRepaired + skill;
     }
     
     
-    public int calcCost(int timeToComplete, int skill, int amountRepaired) {
+    public int calcCost(int timeToComplete, int skill, int amountRepaired) 
+    {
         return timeToComplete + amountRepaired - skill;
     }
 }

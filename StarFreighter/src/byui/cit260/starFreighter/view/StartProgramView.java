@@ -56,7 +56,6 @@ public class StartProgramView
              + "\n* ship in the air. Who knows, perhaps there is more meant   *"
              + "\n* for you......                                             *"
              + "\n*                                                           *"
-             + "\n*               out there..among the stars....              *"
              + "\n*                                                           *"
              + "\n*************************************************************"
              );
