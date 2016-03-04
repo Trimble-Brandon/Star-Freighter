@@ -11,64 +11,23 @@ import java.util.Scanner;
  *
  * @author Brandon
  */
-class GameMenuView 
-{
-    private final String menu;
-    
+class GameMenuView extends View
+{    
     public GameMenuView()
     {
-        this.menu = "\nTesting LaunchShipView. Would you like to launch?(y/n): ";
-    }
-    
-     public void displayMenu() 
-    {
-        boolean done = false;
-        do {
-            System.out.println(menu);
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q")) 
-            {
-                return;
-            }
-            done = this.doAction(menuOption);
-        } while (!done);
+        super("\nTesting LaunchShipView. Would you like to launch?(y/n): ");
     }
      
-     public String getMenuOption() 
+     public boolean doAction(String value) 
     {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        
-        boolean valid = false;
-        while(!valid)
-        {
-            System.out.println("(y/n)");
-            value = keyboard.nextLine().toUpperCase();
-            value = value.trim();
-            
-            if(value.length() < 1)
-            {
-                System.out.println("What you have entered is invalid."
-                        + "\nPlease try again");
-                continue;
-            }
-            valid = true;
-        }
-        return value;
-    }
-     
-     private boolean doAction(String menuOption) 
-    {
-        switch(menuOption)
+        switch(value)
         {
             case "Y":
                 LaunchShipView launchShip = new LaunchShipView();
-                launchShip.displayLaunch();
+                launchShip.display();
                 break;
             case "N":
-                MainMenuView mainMenu = new MainMenuView();
-                mainMenu.displayMainMenuView();
-                break;
+                return true;
             default:
                 System.out.println("Invalid selection. Please try again.");
         }

@@ -11,9 +11,8 @@ import java.util.Scanner;
  *
  * @author Joseph
  */
-public class HelpMenuView 
+public class HelpMenuView extends View
 {
-    private final String menu;
     private final String infoText;
     private final String movementText;
     private final String captainText;
@@ -23,17 +22,17 @@ public class HelpMenuView
     
     public HelpMenuView() 
     {
-        this.menu = "\n"
-                    + "\n--------------------------------------------------------------"
-                    + "\n| Help Menu                                                  |"
-                    + "\nG - Info                                                     |"
-                    + "\nM - Movement - How to move                                   |"
-                    + "\nC - Captain and Crew - Classes/Roles/Skills                  |"
-                    + "\nI - How to Make Money/Jobs Board                             |"
-                    + "\nD - Ship Details - Launch and travel                         |"
-                    + "\nR - Shops Upgrades and Repairs                               |"
-                    + "\nQ - Back to previous menu                                    |"
-                    + "\n--------------------------------------------------------------";
+        super("\n"
+            + "\n--------------------------------------------------------------"
+            + "\n| Help Menu                                                  |"
+            + "\nG - Info                                                     |"
+            + "\nM - Movement - How to move                                   |"
+            + "\nC - Captain and Crew - Classes/Roles/Skills                  |"
+            + "\nI - How to Make Money/Jobs Board                             |"
+            + "\nD - Ship Details - Launch and travel                         |"
+            + "\nR - Shops Upgrades and Repairs                               |"
+            + "\nQ - Back to previous menu                                    |"
+            + "\n--------------------------------------------------------------");
 
         this.infoText = "\nInfo Yay!";
         this.movementText = "\nMovement Yay!";
@@ -42,47 +41,10 @@ public class HelpMenuView
         this.shipText = "\nShip Yay!";
         this.shopsText = "\nShops Yay!";
     }
-    
-    public void displayMenu() 
-    {
-        boolean done = false;
-        do {
-            System.out.println(menu);
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q")) 
-            {
-                return;
-            }
-            done = this.doAction(menuOption);
-        } while (!done);
-    }
-    
-    public String getMenuOption() 
-    {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        
-        boolean valid = false;
-        while(!valid)
-        {
-            System.out.println("Select menu item");
-            value = keyboard.nextLine().toUpperCase();
-            value = value.trim();
-            
-            if(value.length() < 1)
-            {
-                System.out.println("What you have entered is invalid."
-                        + "\nPlease try again");
-                continue;
-            }
-            valid = true;
-        }
-        return value;
-    }
 
-    private boolean doAction(String menuOption) 
+    public boolean doAction(String value) 
     {
-        switch(menuOption)
+        switch(value)
         {
             case "G":
                 this.displayInfo(infoText);

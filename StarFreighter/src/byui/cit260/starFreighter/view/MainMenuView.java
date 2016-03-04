@@ -6,69 +6,29 @@
 package byui.cit260.starFreighter.view;
 
 import byui.cit260.starFreighter.control.GameControl;
-import java.util.Scanner;
 import starfreighter.StarFreighter;
 
 /**
  *
  * @author Brandon
  */
-public class MainMenuView 
-{
-    private String menu;
+public class MainMenuView extends View {
     
     public MainMenuView() {
-        this.menu = "\n"
-                    + "\n--------------------------------------------------------------"
-                    + "\n| Main Menu                                                  |"
-                    + "\nN - Start New game                                           |"
-                    + "\nG - Start Existing game                                      |"
-                    + "\nH - Get help on how to play the game                         |"
-                    + "\nS - Save game                                                |"
-                    + "\nE - Exit                                                     |"
-                    + "\n--------------------------------------------------------------";
-    }
-    
-    public void displayMainMenuView() 
-    {
-        boolean done = false;
-        do {
-            System.out.println(menu);
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("E")) {
-                return;
-            }
-            done = this.doAction(menuOption);
-        } while (!done);
-    }
-    
-    public String getMenuOption() 
-    {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        
-        boolean valid = false;
-        while(!valid)
-        {
-            System.out.println("Select menu item");
-            value = keyboard.nextLine().toUpperCase();
-            value = value.trim();
-            
-            if(value.length() < 1)
-            {
-                System.out.println("What you have entered is invalid."
-                        + "\nPlease try again");
-                continue;
-            }
-            valid = true;
-        }
-        return value;
+        super("\n"
+            + "\n--------------------------------------------------------------"
+            + "\n| Main Menu                                                  |"
+            + "\nN - Start New game                                           |"
+            + "\nG - Start Existing game                                      |"
+            + "\nH - Get help on how to play the game                         |"
+            + "\nS - Save game                                                |"
+            + "\nQ - Exit                                                     |"
+            + "\n--------------------------------------------------------------");
     }
 
-    private boolean doAction(String menuOption) 
-    {
-        switch(menuOption)
-        {
+    @Override
+    public boolean doAction(String value) {
+        switch(value) {
             case "N":
                 this.startNewGame();
                 break;
@@ -87,28 +47,24 @@ public class MainMenuView
         return false;
     }
 
-    private void startNewGame() 
-    {
+    private void startNewGame() {
         GameControl.newGame(StarFreighter.getPlayer());
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        gameMenu.display();
     }
 
-    private void startExistingGame() 
-    {
+    private void startExistingGame() {
         System.out.println("startExistingGame has been called.");
     }
 
-    private void displayHelpMenu() 
-    {
+    private void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayMenu();
+        helpMenu.display();
     }
 
-    private void displaySaveMenu() 
-    {
+    private void displaySaveMenu() {
         SaveMenuView saveMenu = new SaveMenuView();
-        saveMenu.displayMenu();
+        saveMenu.display();
         System.out.println("saveGame has been called.");
     }
     

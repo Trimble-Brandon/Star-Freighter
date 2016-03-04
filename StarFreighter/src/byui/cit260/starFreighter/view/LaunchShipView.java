@@ -5,21 +5,18 @@
  */
 package byui.cit260.starFreighter.view;
 
-import java.util.Objects;
 import java.util.Scanner;
 
 /**
  *
  * @author Brandon
  */
-public class LaunchShipView 
+public class LaunchShipView extends View
 {
-    private String promptMessage;
-    private final String menu;
+    private String promptMessage; //TODO Make work
     
-    public LaunchShipView() 
-    {   
-        this.menu = "\n********************************************************"
+    public LaunchShipView() {   
+        super("\n********************************************************"
               + "\n*                                                          *"
               + "\n*                                                          *"
               + "\n*                                                          *"
@@ -35,58 +32,18 @@ public class LaunchShipView
               + "\n*                                                          *"
               + "\n*                                                          *"
               + "\n*                                                          *"
-              + "\n************************************************************";
+              + "\n************************************************************");
     }
     
-    public void displayLaunch()
+    public boolean doAction(String value) 
     {
-        this.promptMessage = "\nWould you like to prep ship for launch?(y/n): ";
-        
-        boolean done = false;
-        do {
-            System.out.println(menu);
-            String menuOption = this.getLaunchPermission();
-            if (menuOption.toUpperCase().equals("Q")) 
-            {
-                return;
-            }
-            done = this.doAction(menuOption);
-        } while (!done);
-    }    
-    
-    public String getLaunchPermission() 
-    {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-        
-        while(!valid)
-        {
-            System.out.println("\n" + this.promptMessage);
-            value = keyboard.nextLine();
-            value = value.trim();
-            
-            if(value.length() < 1)
-            {
-                System.out.println("Invalid value! The value cannot be blank.");
-                continue;
-            }
-            valid = true;
-        }
-        return value;
-    }
-    
-    private boolean doAction(String menuOption) 
-    {
-        switch(menuOption)
+        switch(value)
         {
             case "Y":
-                LaunchShipView launchShip = new LaunchShipView();
-                launchShip.displayLaunch();
+                System.out.println("Yes!");
                 break;
             case "N":
-                MainMenuView mainMenu = new MainMenuView();
-                mainMenu.displayMainMenuView();
+                System.out.println("No!");
                 break;
             default:
                 System.out.println("Invalid selection. Please try again.");

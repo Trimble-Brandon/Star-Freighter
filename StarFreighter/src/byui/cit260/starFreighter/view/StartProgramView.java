@@ -13,21 +13,13 @@ import java.util.Scanner;
  *
  * @author Brandon
  */
-public class StartProgramView 
+public class StartProgramView extends View
 {
     private String promptMessage;
     
     public StartProgramView() 
     {
-        this.promptMessage = "\nPlease enter your name: ";
-    
-        this.displayBanner();
-    }
-
-    public void displayBanner() 
-    {
-        System.out.println(
-               "\n*************************************************************"
+        super("\n*************************************************************"
              + "\n* This game you will be playing a newly dubbed captain.     *"
              + "\n* You have come into possession of a ship! Well, it used    *"
              + "\n* to be a ship. And it will be! Once you have acquired the  *"
@@ -58,52 +50,19 @@ public class StartProgramView
              + "\n*                                                           *"
              + "\n*                                                           *"
              + "\n*************************************************************"
-             );
+             + "\n\n"
+             + "\nPlease enter your name: ");
     }
 
-    public void displayStartProgramView() 
-    {
-        boolean done = false;
-        do 
-        {
-            String playerName = this.getPlayerName();
-            if(playerName.toUpperCase().equals("Q"))
-            {
-                return;
-            }
-            done = this.doAction(playerName);
-        }
-        while (!done);
-    }
-
-    public String getPlayerName() 
-    {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-        
-        while(!valid)
-        {
-            System.out.println("\n" + this.promptMessage);
-            value = keyboard.nextLine();
-            value = value.trim();
-            
-            if(value.length() < 1)
-            {
-                System.out.println("Invalid value! The value cannot be blank.");
-                continue;
-            }
-            valid = true;
-        }
-        return value;
-    }
-
-    private boolean doAction(String playerName) 
+    public boolean doAction(String playerName) 
     {
         if (playerName.length() < 2)
         {
             System.out.println("\nInvalid Player name. The name must be greater than"
-                    + "1 characters in length.");
+                            + " 1 characters in length.");
+            Scanner keybaord = new Scanner(System.in);
+            System.out.println("\n\nPress enter to continue");
+            keybaord.nextLine();
             
             return false;
         }
@@ -129,6 +88,6 @@ public class StartProgramView
         
         MainMenuView mainMenu = new MainMenuView();
 
-        mainMenu.displayMainMenuView();
+        mainMenu.display();
     }
 }
