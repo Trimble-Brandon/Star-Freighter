@@ -5,26 +5,21 @@
  */
 package byui.cit260.starFreighter.view;
 
-import java.util.Scanner;
-
 /**
  *
  * @author Brandon
  */
 class GameMenuView extends View
 {    
-    public GameMenuView()
-    {
-        super("\nTesting LaunchShipView. Would you like to launch?(y/n): ");
+    public GameMenuView() {
+        super("\nTesting LocationChooserView. Press Y to continue, N to return");
     }
      
-     public boolean doAction(String value) 
-    {
-        switch(value)
-        {
+     public boolean doAction(String value) {
+        switch(value) {
             case "Y":
-                LaunchShipView launchShip = new LaunchShipView();
-                launchShip.display();
+                LocationChooserView lChooser = new LocationChooserView();
+                lChooser.display();
                 break;
             case "N":
                 return true;
@@ -33,5 +28,4 @@ class GameMenuView extends View
         }
         return false;
     }
-    
 }

@@ -14,7 +14,7 @@ import java.util.Objects;
 public class Location 
 {
     //Class instance variables
-    private Integer location;
+    private int location;
     private String locationName;
     private String description;
     
@@ -22,6 +22,12 @@ public class Location
     public Location() 
     {
        
+    }
+    
+    public Location(int loc, String locName, String desc) {
+        this.location = loc;
+        this.locationName = locName;
+        this.description = desc;
     }
     
     //
