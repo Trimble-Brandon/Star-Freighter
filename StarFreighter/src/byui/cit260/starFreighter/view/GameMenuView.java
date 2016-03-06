@@ -12,14 +12,21 @@ package byui.cit260.starFreighter.view;
 class GameMenuView extends View
 {    
     public GameMenuView() {
-        super("\nTesting LocationChooserView. Press Y to continue, N to return");
+        super("\nTesting LocationChooserView, ShopMenuView. "
+                + "\nEnter L for LocationChooserView, "
+                + "\nEnter S for ShopMenuView,"
+                + "\nEnter N to return");
     }
      
      public boolean doAction(String value) {
         switch(value) {
-            case "Y":
+            case "L":
                 LocationChooserView lChooser = new LocationChooserView();
                 lChooser.display();
+                break;
+            case "S":
+                ShopMenuView sMenu = new ShopMenuView();
+                sMenu.display();
                 break;
             case "N":
                 return true;
