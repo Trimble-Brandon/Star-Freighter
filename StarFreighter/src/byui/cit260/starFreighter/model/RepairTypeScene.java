@@ -6,16 +6,22 @@
 package byui.cit260.starFreighter.model;
 
 import java.util.Objects;
+import starfreighter.StarFreighter;
 
 /**
  *
  * @author Brandon
  */
-public class RepairTypeScene 
+public class RepairTypeScene
 {
+    public enum sceneType
+    {
+        scene1;
+    }
+    
     //Class instance variables
     private String description;
-    private Double timeToComplete;
+    private int timeToComplete;
     private Double cost;
     private Integer skill;
     private Integer expGained;
@@ -25,6 +31,26 @@ public class RepairTypeScene
     public RepairTypeScene() 
     {
         
+    }
+    
+    private static RepairTypeScene[] createScenes()
+    {
+        Game game = StarFreighter.getCurrentGame();
+        
+        RepairTypeScene[] scenes = new RepairTypeScene[sceneType.values().length];
+        
+        RepairTypeScene scene1 = new RepairTypeScene();
+        scene1.setDescription("This is a scene for repairs.");
+        
+        scene1.setTimeToComplete(30);
+        scene1.setCost(50000.00);
+        scene1.setSkill(5);
+        scene1.setExpGained(500);
+        scene1.setAmountRepaired(100.00);
+        
+        scenes[sceneType.scene1.ordinal()] = scene1;
+        
+        return scenes;
     }
     
     //
@@ -101,12 +127,12 @@ public class RepairTypeScene
         this.description = description;
     }
 
-    public Double getTimeToComplete() 
+    public int getTimeToComplete() 
     {
         return timeToComplete;
     }
 
-    public void setTimeToComplete(Double timeToComplete) 
+    public void setTimeToComplete(int timeToComplete) 
     {
         this.timeToComplete = timeToComplete;
     }

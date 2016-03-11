@@ -13,6 +13,16 @@ import byui.cit260.starFreighter.model.Map;
  * @author Joseph
  */
 public class MapControl {
+
+    static Map createNewMap() {
+        System.out.println("createNewMap has been called!");
+        return null;
+    }
+
+    static void moveActorsToStartingLocation(Map map) {
+        
+        
+    }
     public boolean move(Map map, Location loc) {
         if (map.getLocation() == loc) {
             return false;

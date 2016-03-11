@@ -12,9 +12,11 @@ import starfreighter.StarFreighter;
  *
  * @author Brandon
  */
-public class MainMenuView extends View {
+public class MainMenuView extends View 
+{
     
-    public MainMenuView() {
+    public MainMenuView() 
+    {
         super("\n"
             + "\n--------------------------------------------------------------"
             + "\n| Main Menu                                                  |"

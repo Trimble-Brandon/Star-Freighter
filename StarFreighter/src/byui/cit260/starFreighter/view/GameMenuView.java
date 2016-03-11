@@ -5,6 +5,9 @@
  */
 package byui.cit260.starFreighter.view;
 
+import byui.cit260.starFreighter.control.GameControl;
+import byui.cit260.starFreighter.model.InventoryItem;
+
 /**
  *
  * @author Brandon
@@ -14,8 +17,9 @@ class GameMenuView extends View
     public GameMenuView() {
         super("\nTesting LocationChooserView, ShopMenuView. "
                 + "\nEnter L for LocationChooserView, "
-                + "\nEnter S for ShopMenuView,"
-                + "\nEnter N to return");
+                + "\nEnter S for ShopMenuView, "
+                + "\nEnter D for DisplayInventory, "
+                + "\nEnter N to return ");
     }
      
      public boolean doAction(String value) {
@@ -28,11 +32,29 @@ class GameMenuView extends View
                 ShopMenuView sMenu = new ShopMenuView();
                 sMenu.display();
                 break;
+            case "D":
+                this.displayInventory();
+                break;
             case "N":
                 return true;
             default:
                 System.out.println("Invalid selection. Please try again.");
         }
         return false;
+    }
+
+    private void displayInventory() 
+    {
+        InventoryItem[] inventory = GameControl.getSortedInventoryList();
+        
+        System.out.println("\nList of Inventory Items!");
+        System.out.println("Description" + "\t" +
+                           "Required" + "\t" +
+                           "In Stock");
+        
+        for (InventoryItem item : inventory) {
+	System.out.println(item.getDescription() + "\t   " +
+                     item.getQuantity() + "\t   ");
+        }   
     }
 }

@@ -5,13 +5,14 @@
  */
 package byui.cit260.starFreighter.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author Joseph
  */
-public class Ship {
+public class Ship implements Serializable {
     private String description;
     private Integer maxCapacity;
     private Integer engine;
@@ -21,6 +22,13 @@ public class Ship {
     private Integer lifeSupport;
 
     public Ship() {
+        this.description = "";
+        this.maxCapacity = 1000; //The fire marshall says so
+        this.engine = 1;
+        this.fuelLevel = 100;
+        this.hull = 100;
+        this.electrical = 100;
+        this.lifeSupport = 100;
     }
 
     @Override

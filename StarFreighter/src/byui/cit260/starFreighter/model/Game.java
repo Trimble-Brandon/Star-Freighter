@@ -17,9 +17,15 @@ public class Game implements Serializable
     //Class instance variables
     private Integer noPeople;
     private Double totalTime;
+    private Ship ship;
+    private InventoryItem[] inventory;
+    private Player player;
+    private GameCharacter characters;
+    private Map map;
+    
 
     //Default constructor
-    public Game() 
+    public Game()
     {
         
     }
@@ -65,9 +71,6 @@ public class Game implements Serializable
         return true;
     }
 
-    
-    
-    
     //Getters and Setters
     public Integer getNoPeople() 
     {
@@ -88,6 +91,46 @@ public class Game implements Serializable
     public void setTotalTime(Double totalTime) 
     {
         this.totalTime = totalTime;
+    }
+    
+    public Ship getShip() {
+        return ship;
+    }
+
+    public void setShip(Ship ship) {
+        this.ship = ship;
+    }
+
+    public InventoryItem[] getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(InventoryItem[] inventory) {
+        this.inventory = inventory;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public GameCharacter getCharacters() {
+        return characters;
+    }
+
+    public void setCharacters(GameCharacter characters) {
+        this.characters = characters;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
     }
     
     
