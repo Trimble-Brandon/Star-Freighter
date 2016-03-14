@@ -56,7 +56,9 @@ public class InventoryItem {
 
     @Override
     public String toString() {
-        return "InventoryItem{" + "itemType=" + itemType + ", quantity=" + quantity + ", description=" + description + ", itemSize=" + itemSize + '}';
+        return "InventoryItem{" + "itemType=" + itemType + ", quantity=" 
+                + quantity + ", description=" + description + ", itemSize=" 
+                + itemSize + '}';
     }
 
     public String getItemType() {

@@ -19,6 +19,26 @@ public class ShopMenuView extends View
     private final String pistolText;
     private final String rNUMenuText;
     private final String quit2MainText;
+    private final String pistolSupplyText;
+    
+    public int getPistolSupply()
+    {
+        String pistols[] = {"RedPistol", "FlintPistol", "BBPistol"}; //placeholder until we've got the inventory set up
+        int pistolSupply = 0;
+        int count = 0;
+        
+        for (int i = 0; i < pistols.length - 1; i++)
+        {
+            count++;
+        }
+        pistolSupply = count;
+            
+        
+        return pistolSupply;
+    }
+    
+    
+    
     
     public ShopMenuView() 
     {
@@ -28,7 +48,8 @@ public class ShopMenuView extends View
             + "\n1 - Food                                                 *50 |"
             + "\n2 - Ammunition                                           *20 |"
             + "\n3 - Medical Supplies                                     *35 |"
-            + "\n4 - Flintlock Pistol                                    *100 |"   
+            + "\n4 - Flintlock Pistol                                    *100 |"
+            + "\n5 - Check Pistol Supply                                      |"   
             + "\nR - Repair and upgrades menu                                 |"   
             + "\nQ - Quit to game menu                                        |"
             + "\n--------------------------------------------------------------");
@@ -39,6 +60,8 @@ public class ShopMenuView extends View
         this.pistolText = "\nPurchase of Flintlock Pistol has been called";
         this.rNUMenuText = "\nRepair and upgrades menu has been called";
         this.quit2MainText = "\nQuit to main menu has been called";
+        this.pistolSupplyText = "\nThe quantity of pistols in the supply is: " 
+                                + this.getPistolSupply();
     }
 
     
@@ -58,6 +81,9 @@ public class ShopMenuView extends View
                 break;
             case "4":
                 this.displayInfo(pistolText);
+                break;
+            case "5":
+                this.displayInfo(pistolSupplyText);
                 break;
             case "R":
                 this.displayInfo(rNUMenuText);
