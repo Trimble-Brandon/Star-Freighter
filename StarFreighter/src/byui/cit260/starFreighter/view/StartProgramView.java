@@ -6,8 +6,11 @@
 package byui.cit260.starFreighter.view;
 
 import byui.cit260.starFreighter.control.GameControl;
+import byui.cit260.starFreighter.exceptions.GameControlException;
 import byui.cit260.starFreighter.model.Player;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -67,9 +70,13 @@ public class StartProgramView extends View
             return false;
         }
         
-        Player player = GameControl.createPlayer(playerName);
-        if (player == null)
-        {
+        Player player = null;
+        try {
+            player = GameControl.createPlayer(playerName);
+        } catch (GameControlException ex) {
+            Logger.getLogger(StartProgramView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if (player == null) {
             System.out.println("There was an error creating the player.");
             return false;
         }

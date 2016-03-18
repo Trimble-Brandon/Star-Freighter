@@ -5,6 +5,7 @@
  */
 package byui.cit260.starFreighter.control;
 
+import byui.cit260.starFreighter.exceptions.GameControlException;
 import byui.cit260.starFreighter.model.Game;
 import byui.cit260.starFreighter.model.InventoryItem;
 import byui.cit260.starFreighter.model.Map;
@@ -28,11 +29,9 @@ public class GameControl
     }
     
     
-    public static Player createPlayer(String playerName)
-    {
-        if (playerName == null)
-        {
-            return null;
+    public static Player createPlayer(String playerName) throws GameControlException {
+        if (playerName == null) {
+            throw new GameControlException("Player name cannot be null");
         }
         
         Player player = new Player();
@@ -43,9 +42,7 @@ public class GameControl
         return player;
     }
 
-    public static void newGame(Player player) 
-    {
-        
+    public static void newGame(Player player) {
         Game game = new Game();
         
         StarFreighter.setCurrentGame(game);
@@ -61,11 +58,9 @@ public class GameControl
         
         Map map = MapControl.createNewMap();
         MapControl.moveActorsToStartingLocation(map);
-        
     }
 
-    private static InventoryItem[] createInventoryList() 
-    {
+    private static InventoryItem[] createInventoryList() {
         InventoryItem[] inventory = new InventoryItem[1];
         
         //item 1
