@@ -5,20 +5,22 @@
  */
 package byui.cit260.starFreighter.control;
 
+import byui.cit260.starFreighter.exceptions.JobControlException;
+
 /**
  *
  * @author Brandon
  */
 public class JobControl 
 {   
-    public int calcCorrectDiff(int difficulty, int skill)
+    public int calcCorrectDiff(int difficulty, int skill) throws JobControlException
     {
        //variables
        int cDiff = 0;
     
        if (difficulty < 1 || difficulty > 10 || skill < 1 || skill > 10)
        {
-               return -1;
+            throw new JobControlException("Error calculating corrected difficulty");
        }
        else
        {
