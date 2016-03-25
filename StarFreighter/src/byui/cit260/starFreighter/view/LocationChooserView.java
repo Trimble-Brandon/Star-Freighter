@@ -98,7 +98,7 @@ public class LocationChooserView extends View {
             case "Q":
                 return true;
             default:
-                System.out.println("Invalid selection. Please try again.");
+                this.console.println("Invalid selection. Please try again.");
         }
         return false;
     }

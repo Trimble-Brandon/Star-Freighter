@@ -5,7 +5,9 @@
  */
 package byui.cit260.starFreighter.view;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+import starfreighter.StarFreighter;
 
 /**
  *
@@ -14,16 +16,20 @@ import java.util.Scanner;
 public abstract class View implements ViewInterface {
     protected String displayMessage;
     
+    protected final BufferedReader keyboard = StarFreighter.getInFile();
+    protected final PrintWriter console = StarFreighter.getOutFile();
+    
     public View(String message) {
         this.displayMessage = message;
     }
     
     @Override 
     public void display() {
+        String value;
         boolean done = false;
         do {
-            String value = this.getInput();
-            if(value.toUpperCase().equals("Q")) {
+            value = this.getInput();
+            if (value.toUpperCase().equals("Q")) {
                 return;
             }
             done = this.doAction(value);
@@ -33,21 +39,23 @@ public abstract class View implements ViewInterface {
     
     @Override
     public String getInput() {
-        Scanner keyboard = new Scanner(System.in);
         boolean valid = false;
         String value = null;
-        
-        while(!valid) {
-            System.out.println("\n" + this.displayMessage);
-            value = keyboard.nextLine().toUpperCase();
-            value = value.trim();
-            
-            if(value.length() < 1) {
-                System.out.println("What you have entered is invalid."
-                                 + "\nPlease try again");
-                continue;
+        try {
+            while(!valid) {
+                this.console.println("\n" + this.displayMessage);
+                value = this.keyboard.readLine().toUpperCase();
+                value = value.trim();
+
+                if(value.length() < 1) {
+                    ErrorView.display(this.getClass().getName(), "What you have entered is invalid."
+                                     + "\nPlease try again");
+                    continue;
+                }
+                break;
             }
-            break;
+        } catch(Exception e) {
+            ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
         }
         return value;
     }

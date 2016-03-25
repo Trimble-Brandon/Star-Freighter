@@ -8,7 +8,7 @@ package byui.cit260.starFreighter.view;
 import byui.cit260.starFreighter.control.GameControl;
 import byui.cit260.starFreighter.exceptions.GameControlException;
 import byui.cit260.starFreighter.model.Player;
-import java.util.Scanner;
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -17,11 +17,10 @@ import java.util.logging.Logger;
  * @author Brandon
  */
 public class StartProgramView extends View
-{
-    private String promptMessage;
+{    
+    private static String displayMessage;
     
-    public StartProgramView() 
-    {
+    public StartProgramView() {
         super("\n*************************************************************"
              + "\n* This game you will be playing a newly dubbed captain.     *"
              + "\n* You have come into possession of a ship! Well, it used    *"
@@ -57,15 +56,19 @@ public class StartProgramView extends View
              + "\nPlease enter your name: ");
     }
 
+    @Override
     public boolean doAction(String playerName) 
     {
         if (playerName.length() < 2)
         {
-            System.out.println("\nInvalid Player name. The name must be greater than"
+            this.console.println("\nInvalid Player name. The name must be greater than"
                             + " 1 characters in length.");
-            Scanner keybaord = new Scanner(System.in);
-            System.out.println("\n\nPress enter to continue");
-            keybaord.nextLine();
+            this.console.println("\n\nPress enter to continue");
+            try {
+                keyboard.readLine();
+            } catch (IOException ex) {
+                Logger.getLogger(StartProgramView.class.getName()).log(Level.SEVERE, null, ex);
+            }
             
             return false;
         }
@@ -77,7 +80,7 @@ public class StartProgramView extends View
             Logger.getLogger(StartProgramView.class.getName()).log(Level.SEVERE, null, ex);
         }
         if (player == null) {
-            System.out.println("There was an error creating the player.");
+            this.console.println("There was an error creating the player.");
             return false;
         }
         this.displayNextView(player);
@@ -87,7 +90,7 @@ public class StartProgramView extends View
 
     private void displayNextView(Player player) 
     {
-        System.out.println("\n================================================="
+        this.console.println("\n================================================="
                          + "\n Welcome to the game " + player.getName()
                          + "\n We hope you have fun!"
                          + "\n================================================="

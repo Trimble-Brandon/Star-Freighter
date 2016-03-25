@@ -38,13 +38,13 @@ public class LaunchShipView extends View
         switch(value)
         {
             case "Y":
-                System.out.println("Yes!");
+                this.console.println("Yes!");
                 break;
             case "N":
-                System.out.println("No!");
+                this.console.println("No!");
                 break;
             default:
-                System.out.println("Invalid selection. Please try again.");
+                this.console.println("Invalid selection. Please try again.");
         }
         return false;
     }

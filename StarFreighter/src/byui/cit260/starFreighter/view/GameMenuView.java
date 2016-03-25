@@ -38,7 +38,7 @@ class GameMenuView extends View
             case "N":
                 return true;
             default:
-                System.out.println("Invalid selection. Please try again.");
+                this.console.println("Invalid selection. Please try again.");
         }
         return false;
     }
@@ -47,13 +47,13 @@ class GameMenuView extends View
     {
         InventoryItem[] inventory = GameControl.getSortedInventoryList();
         
-        System.out.println("\nList of Inventory Items!");
-        System.out.println("Description" + "\t" +
+        this.console.println("\nList of Inventory Items!");
+        this.console.println("Description" + "\t" +
                            "Required" + "\t" +
                            "In Stock");
         
         for (InventoryItem item : inventory) {
-	System.out.println(item.getDescription() + "\t   " +
+	this.console.println(item.getDescription() + "\t   " +
                      item.getQuantity() + "\t   ");
         }   
     }

@@ -41,10 +41,10 @@ public class MainMenuView extends View
                 this.displayHelpMenu();
                 break;
             case "S":
-                this.displaySaveMenu();
+                this.saveGame();
                 break;
             default:
-                System.out.println("Invalid selection. Please try again.");
+                this.console.println("Invalid selection. Please try again.");
         }
         return false;
     }
@@ -56,7 +56,18 @@ public class MainMenuView extends View
     }
 
     private void startExistingGame() {
-        System.out.println("startExistingGame has been called.");
+        this.console.println("\n\nEnter the file path for file where the game is to be saved");
+        
+        String filePath = this.getInput();
+        
+        try {
+            GameControl.getSavedGame(filePath);
+        } catch (Exception e) {
+            ErrorView.display("MainMenuView", e.getMessage());
+        }
+        
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     private void displayHelpMenu() {
@@ -64,10 +75,20 @@ public class MainMenuView extends View
         helpMenu.display();
     }
 
-    private void displaySaveMenu() {
-        SaveMenuView saveMenu = new SaveMenuView();
-        saveMenu.display();
-        System.out.println("saveGame has been called.");
+    private void saveGame() {
+        //SaveMenuView saveMenu = new SaveMenuView();
+        //saveMenu.display();
+        
+        this.console.println("\n\nEnter the file path where you want the game to be saved.");
+        String filePath = this.getInput();
+        
+        try {
+            GameControl.saveGame(StarFreighter.getCurrentGame(), filePath);
+        } catch(Exception e) {
+            ErrorView.display("MainMenuView", e.getMessage());
+        }
+        
+        //Display successful save
     }
     
 }

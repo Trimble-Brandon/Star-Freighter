@@ -5,7 +5,9 @@
  */
 package byui.cit260.starFreighter.view;
 
-import java.util.Scanner;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -92,17 +94,20 @@ public class ShopMenuView extends View
                 this.displayInfo(quit2MainText);
                 return true;
             default:
-                System.out.println("Invalid selection. Please try again.");
+                this.console.println("Invalid selection. Please try again.");
         }
         return false;
     }
     
     private void displayInfo(String text) 
     {
-        System.out.println(text);
-        System.out.println("\n\nPress Enter to go back to the save menu");
+        this.console.println(text);
+        this.console.println("\n\nPress Enter to go back to the save menu");
         
-        Scanner keyboard = new Scanner(System.in);
-        keyboard.nextLine();
+        try {
+            keyboard.readLine();
+        } catch (IOException ex) {
+            Logger.getLogger(ShopMenuView.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

@@ -5,6 +5,7 @@
  */
 package byui.cit260.starFreighter.control;
 
+import byui.cit260.starFreighter.exceptions.JobControlException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -24,7 +25,7 @@ public class JobControlTest
      * Test of calcCorrectDiff method, of class JobControl.
      */
     @Test
-    public void testCalcCorrectDiff() 
+    public void testCalcCorrectDiff() throws JobControlException 
     {
         //test1
         System.out.println("calcCorrectDiff");
