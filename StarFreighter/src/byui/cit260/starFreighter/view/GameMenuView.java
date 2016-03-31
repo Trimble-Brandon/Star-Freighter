@@ -18,7 +18,7 @@ class GameMenuView extends View
         super("\n"
                 + "\n----------------------------------------------------------"
                 + "\n| Game Menu Options |                                    |"
-                + "\nL - Launch Ship!                                         |"
+                + "\nL - Change Location/Launch Ship!                         |"
                 + "\nM - see your map!                                        |" 
                 + "\nS - enter the Shop and see repairs/upgrades              |"
                 + "\nJ - view the Job board                                   |" 

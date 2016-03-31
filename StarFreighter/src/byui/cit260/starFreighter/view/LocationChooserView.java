@@ -14,21 +14,21 @@ import byui.cit260.starFreighter.model.Map;
  */
 public class LocationChooserView extends View {    
     public LocationChooserView() {
-        super("\n********************************************************"
-            + "\n* Choose a location to travel to.                          *"
-            + "\n*                                                          *"
-            + "\n* 1 - Downtown                                             *"
-            + "\n* 2 - Slums                                                *"
-            + "\n* 3 - Machine shop                                         *"
-            + "\n* 4 - Fuel station                                         *"
-            + "\n* 5 - Public house                                         *"
-            + "\n* 6 - Reqruiting office                                    *"
-            + "\n* 7 - Park                                                 *"
-            + "\n* 8 - 6 Flags                                              *"
-            + "\n* 9 - Walmart                                              *"
-            + "\n* 10- Home                                                 *"
-            + "\n* Q - Exit                                                 *"
-            + "\n************************************************************");
+        super("\n**************************************************************"
+            + "\n* Choose a location to travel to.                            *"
+            + "\n*                                                            *"
+            + "\n* 1 - Downtown                                               *"
+            + "\n* 2 - Slums                                                  *"
+            + "\n* 3 - Machine shop                                           *"
+            + "\n* 4 - Fuel station                                           *"
+            + "\n* 5 - Public house                                           *"
+            + "\n* 6 - Reqruiting office                                      *"
+            + "\n* 7 - Park                                                   *"
+            + "\n* 8 - 6 Flags                                                *"
+            + "\n* 9 - Walmart                                                *"
+            + "\n* 10- Launch Ship!                                           *"
+            + "\n* Q - Exit                                                   *"
+            + "\n**************************************************************");
     }
     @Override
     public boolean doAction(String value) {
@@ -90,10 +90,11 @@ public class LocationChooserView extends View {
                 map.setLocation(loc);
                 return true;
             case "10":
-                loc.setDescription("");
+                loc.setDescription("Launch the Ship!");
                 loc.setLocation(10);
-                loc.setLocationName("Home");
+                loc.setLocationName("Launch Ship");
                 map.setLocation(loc);
+                LaunchShipView.promptMessage();
                 return true;
             case "Q":
                 return true;

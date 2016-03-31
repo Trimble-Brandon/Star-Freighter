@@ -11,26 +11,9 @@ package byui.cit260.starFreighter.view;
  */
 public class LaunchShipView extends View
 {
-    private String promptMessage; //TODO Make work
-    
-    public LaunchShipView() {   
-        super("\n********************************************************"
-              + "\n*                                                          *"
-              + "\n*                                                          *"
-              + "\n*                                                          *"
-              + "\n*                                                          *"
-              + "\n*                                                          *"
-              + "\n*                                                          *"
-              + "\n*                                                          *"
-              + "\n*                  insert of rocket launch                 *"
-              + "\n*                           coming                         *"
-              + "\n*                            soon                          *"
-              + "\n*                                                          *"
-              + "\n*                                                          *"
-              + "\n*                                                          *"
-              + "\n*                                                          *"
-              + "\n*                                                          *"
-              + "\n************************************************************");
+    public static void promptMessage()
+    {
+        System.out.println("Do you want to Launch the Ship? y/n: ");
     }
     
     public boolean doAction(String value) 
@@ -38,14 +21,36 @@ public class LaunchShipView extends View
         switch(value)
         {
             case "Y":
-                this.console.println("Yes!");
+                this.LaunchShipView();
                 break;
             case "N":
-                this.console.println("No!");
+                LocationChooserView.LocationChooserView();
                 break;
             default:
                 this.console.println("Invalid selection. Please try again.");
         }
         return false;
     }
+
+    private LaunchShipView() 
+    {
+        super("\n**************************************************************"
+            + "\n*                                                            *"
+            + "\n*                                                            *"
+            + "\n*                                                            *"
+            + "\n*                                                            *"
+            + "\n*                                                            *"
+            + "\n*                                                            *"
+            + "\n*                                                            *"
+            + "\n*                  insert of rocket launch                   *"
+            + "\n*                           coming                           *"
+            + "\n*                            soon                            *"
+            + "\n*                                                            *"
+            + "\n*                                                            *"
+            + "\n*                                                            *"
+            + "\n*                                                            *"
+            + "\n*                                                            *"
+            + "\n**************************************************************");
+    }
+    
 }
