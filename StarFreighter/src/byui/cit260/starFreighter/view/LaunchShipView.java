@@ -21,10 +21,10 @@ public class LaunchShipView extends View
         switch(value)
         {
             case "Y":
-                this.LaunchShipView();
+                System.out.println("Yes!");
                 break;
             case "N":
-                LocationChooserView.LocationChooserView();
+                System.out.println("No!");
                 break;
             default:
                 this.console.println("Invalid selection. Please try again.");
