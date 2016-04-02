@@ -22,7 +22,7 @@ class GameMenuView extends View
                 + "\nEnter N to return ");
     }
      
-     public boolean doAction(String value) {
+    public boolean doAction(String value) {
         switch(value) {
             case "L":
                 LocationChooserView lChooser = new LocationChooserView();

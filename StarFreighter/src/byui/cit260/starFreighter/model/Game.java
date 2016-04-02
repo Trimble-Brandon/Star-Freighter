@@ -16,7 +16,7 @@ public class Game implements Serializable
 {
     //Class instance variables
     private Integer noPeople;
-    private Double totalTime;
+    private int totalTime;
     private Ship ship;
     private InventoryItem[] inventory;
     private Player player;
@@ -82,13 +82,12 @@ public class Game implements Serializable
         this.noPeople = noPeople;
     }
 
-    public Double getTotalTime() 
+    public int getTotalTime() 
     {
-            
         return totalTime;
     }
 
-    public void setTotalTime(Double totalTime) 
+    public void setTotalTime(int totalTime) 
     {
         this.totalTime = totalTime;
     }

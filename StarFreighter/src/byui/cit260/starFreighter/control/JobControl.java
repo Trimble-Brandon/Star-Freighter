@@ -6,6 +6,8 @@
 package byui.cit260.starFreighter.control;
 
 import byui.cit260.starFreighter.exceptions.JobControlException;
+import byui.cit260.starFreighter.model.Game;
+import starfreighter.StarFreighter;
 
 /**
  *
@@ -137,5 +139,10 @@ public class JobControl
         }
         
         return xpReward;
+    }
+    
+    public void addGameTime(int amount) {
+        Game curGame = StarFreighter.getCurrentGame();
+        curGame.setTotalTime(curGame.getTotalTime() + amount);
     }
 }

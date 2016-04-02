@@ -23,7 +23,6 @@ import starfreighter.StarFreighter;
  */
 public class GameControl 
 {
-
     public static InventoryItem[] getSortedInventoryList() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
