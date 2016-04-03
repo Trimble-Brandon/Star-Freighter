@@ -73,6 +73,40 @@ public class JobControl
         return cReward; 
     }
     
+    public int calcExpGained(int cDiff)
+    {
+        //variables
+        int cReward = 0;
+        
+        //calculation
+        if (cDiff == 1)
+        {
+            cReward = 15;
+        }
+        else if (cDiff < 4)
+        {
+            cReward = 25;
+        }
+        else if (cDiff < 6)
+        {
+            cReward = 50;
+        }
+        else if (cDiff < 8)
+        {
+            cReward = 100;
+        }
+        else if (cDiff < 10)
+        {
+            cReward = 200;
+        }
+        else
+        {
+            cReward = 500;
+        }
+        
+        return cReward; 
+    }
+    
     public String calcItemReward(int cDiff)
     {
         //variables
@@ -117,19 +151,19 @@ public class JobControl
         {
             xpReward = 5;
         }
-        else if (cDiff > 1 && cDiff < 4)
+        else if (cDiff < 4)
         {
             xpReward = 15;
         }
-        else if (cDiff > 3 && cDiff < 6)
+        else if (cDiff < 6)
         {
             xpReward = 30;
         }
-        else if (cDiff > 5 && cDiff < 8)
+        else if (cDiff < 8)
         {
             xpReward = 50;
         }
-        else if (cDiff > 7 && cDiff < 10)
+        else if (cDiff < 10)
         {
             xpReward = 100;
         }

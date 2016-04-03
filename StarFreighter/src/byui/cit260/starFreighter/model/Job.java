@@ -13,11 +13,19 @@ import java.util.Objects;
  */
 public class Job {
     private String description;
-    private Integer difficulty;
-    private Double currencyReward;
+    private int difficulty;
+    private double currencyReward;
     private String itemReward;
 
     public Job() {
+        
+    }
+    
+    public Job(String description, int difficulty, double currencyReward, String itemReward) {
+        this.description = description;
+        this.difficulty = difficulty;
+        this.currencyReward = currencyReward;
+        this.itemReward = itemReward;
     }
 
     @Override
@@ -67,7 +75,7 @@ public class Job {
         this.description = description;
     }
 
-    public Integer getDifficulty() {
+    public int getDifficulty() {
         return difficulty;
     }
 
@@ -75,7 +83,7 @@ public class Job {
         this.difficulty = difficulty;
     }
 
-    public Double getCurrencyReward() {
+    public double getCurrencyReward() {
         return currencyReward;
     }
 
