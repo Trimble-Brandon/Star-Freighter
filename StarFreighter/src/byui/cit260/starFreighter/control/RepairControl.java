@@ -22,10 +22,22 @@ public class RepairControl
         }
     }
     
-    public int calcRepair() 
+    public int calcRepair(int currentAmount) 
     {
-        //What's this function supposed to calculate?
-        return 0;
+        switch(currentAmount) {
+            case 0:
+                return 30;
+            case 30:
+                return 25;
+            case 55:
+                return 20;
+            case 75:
+                return 15;
+            case 90:
+                return 10;
+            default:
+                return -1;
+        }
     }
     
     
