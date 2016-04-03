@@ -29,8 +29,10 @@ public class MainMenuView extends View
     }
 
     @Override
-    public boolean doAction(String value) {
-        switch(value) {
+    public boolean doAction(String value) 
+    {
+        switch(value) 
+        {
             case "N":
                 this.startNewGame();
                 break;
@@ -49,20 +51,24 @@ public class MainMenuView extends View
         return false;
     }
 
-    private void startNewGame() {
+    private void startNewGame() 
+    {
         GameControl.newGame(StarFreighter.getPlayer());
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
     }
 
-    private void startExistingGame() {
+    private void startExistingGame() 
+    {
         this.console.println("\n\nEnter the file path for file where the game is saved");
         
         String filePath = this.getInput();
         
-        try {
+        try 
+        {
             GameControl.getSavedGame(filePath);
-        } catch (Exception e) {
+        } catch (Exception e) 
+        {
             ErrorView.display("MainMenuView", e.getMessage());
         }
         
@@ -70,21 +76,25 @@ public class MainMenuView extends View
         gameMenu.display();
     }
 
-    private void displayHelpMenu() {
+    private void displayHelpMenu() 
+    {
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.display();
     }
 
-    private void saveGame() {
+    private void saveGame() 
+    {
         //SaveMenuView saveMenu = new SaveMenuView();
         //saveMenu.display();
         
         this.console.println("\n\nEnter the file path where you want the game to be saved.");
         String filePath = this.getInput();
         
-        try {
+        try 
+        {
             GameControl.saveGame(StarFreighter.getCurrentGame(), filePath);
-        } catch(Exception e) {
+        } catch(Exception e) 
+        {
             ErrorView.display("MainMenuView", e.getMessage());
         }
         
