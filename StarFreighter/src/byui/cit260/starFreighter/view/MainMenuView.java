@@ -84,9 +84,6 @@ public class MainMenuView extends View
 
     private void saveGame() 
     {
-        //SaveMenuView saveMenu = new SaveMenuView();
-        //saveMenu.display();
-        
         this.console.println("\n\nEnter the file path where you want the game to be saved.");
         String filePath = this.getInput();
         

@@ -18,8 +18,7 @@ class GameMenuView extends View
         super("\n"
                 + "\n----------------------------------------------------------"
                 + "\n| Game Menu Options |                                    |"
-                + "\nL - Change Location/Launch Ship!                         |"
-                + "\nM - see your map!                                        |" 
+                + "\nL - Change Location/Launch Ship!                         |" 
                 + "\nS - enter the Shop and see repairs/upgrades              |"
                 + "\nJ - view the Job board                                   |" 
                 + "\nI - view your Inventory                                  |"
@@ -34,9 +33,6 @@ class GameMenuView extends View
                 LocationChooserView lChooser = new LocationChooserView();
                 lChooser.display();
                 break;
-            case "M":
-                System.out.println("Placeholder for Map");
-                break;
             case "S":
                 ShopMenuView sMenu = new ShopMenuView();
                 sMenu.display();
@@ -49,7 +45,8 @@ class GameMenuView extends View
                 this.displayInventory();
                 break;
             case "C":
-                System.out.println("Placeholder for Character menu view");
+                System.out.println("");
+                break;
             case "N":
                 return true;
             default:
