@@ -130,7 +130,8 @@ public class JobBoardView extends View {
                     return false;
             }
             Job job = new Job(description, difficulty, currencyReward, itemReward);
-            JobProposalView jpv = new JobProposalView(job);
+            StarFreighter.setCurrentJob(job);
+            JobProposalView jpv = new JobProposalView();
             jpv.display();
             return true;
         } catch (JobControlException ex) {

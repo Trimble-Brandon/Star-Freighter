@@ -27,6 +27,16 @@ public class StarFreighter
     private static Player player = null;
     
     private static PrintWriter logFile = null;
+    
+    private static Job currentJob = null;
+
+    public static Job getCurrentJob() {
+        return currentJob;
+    }
+
+    public static void setCurrentJob(Job job) {
+        StarFreighter.currentJob = job;
+    }
 
     public static Game getCurrentGame() 
     {

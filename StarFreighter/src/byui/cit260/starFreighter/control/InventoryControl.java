@@ -14,7 +14,7 @@ public class InventoryControl
 {
     public int addToInventory(String inventoryItem, int quantity)
     {
-        return 0; 
+        return 0;
     }
     
     public int removeFromInventory(String inventoryItem, int quantity)

@@ -20,6 +20,7 @@ public class Player
     private int electricalSkill;
     private int mechanicalSkill;
     private int lifeSupportSkill;
+    private int experience;
     
     //Default Constructor
     public Player() 
@@ -28,17 +29,29 @@ public class Player
         this.electricalSkill = 0;
         this.mechanicalSkill = 0;
         this.lifeSupportSkill = 0;
+        this.experience = 0;
+    }
+
+    public Player(String name, Double topScore, int hullSkill, int electricalSkill, int mechanicalSkill, int lifeSupportSkill, int experience) {
+        this.name = name;
+        this.topScore = topScore;
+        this.hullSkill = hullSkill;
+        this.electricalSkill = electricalSkill;
+        this.mechanicalSkill = mechanicalSkill;
+        this.lifeSupportSkill = lifeSupportSkill;
+        this.experience = experience;
     }
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 89 * hash + Objects.hashCode(this.name);
-        hash = 89 * hash + Objects.hashCode(this.topScore);
-        hash = 89 * hash + this.hullSkill;
-        hash = 89 * hash + this.electricalSkill;
-        hash = 89 * hash + this.mechanicalSkill;
-        hash = 89 * hash + this.lifeSupportSkill;
+        int hash = 3;
+        hash = 23 * hash + Objects.hashCode(this.name);
+        hash = 23 * hash + Objects.hashCode(this.topScore);
+        hash = 23 * hash + this.hullSkill;
+        hash = 23 * hash + this.electricalSkill;
+        hash = 23 * hash + this.mechanicalSkill;
+        hash = 23 * hash + this.lifeSupportSkill;
+        hash = 23 * hash + this.experience;
         return hash;
     }
 
@@ -69,15 +82,16 @@ public class Player
         if (this.lifeSupportSkill != other.lifeSupportSkill) {
             return false;
         }
+        if (this.experience != other.experience) {
+            return false;
+        }
         return true;
     }
 
     @Override
     public String toString() {
-        return "Player{" + "name=" + name + ", topScore=" + topScore + ", hullSkill=" + hullSkill + ", electricalSkill=" + electricalSkill + ", mechanicalSkill=" + mechanicalSkill + ", lifeSupportSkill=" + lifeSupportSkill + '}';
+        return "Player{" + "name=" + name + ", topScore=" + topScore + ", hullSkill=" + hullSkill + ", electricalSkill=" + electricalSkill + ", mechanicalSkill=" + mechanicalSkill + ", lifeSupportSkill=" + lifeSupportSkill + ", experience=" + experience + '}';
     }
-    
-    //
 
     public String getName() {
         return name;
@@ -126,5 +140,14 @@ public class Player
     public void setLifeSupportSkill(int lifeSupportSkill) {
         this.lifeSupportSkill = lifeSupportSkill;
     }
+
+    public int getExperience() {
+        return experience;
+    }
+
+    public void setExperience(int experience) {
+        this.experience = experience;
+    }
+
     
 }
