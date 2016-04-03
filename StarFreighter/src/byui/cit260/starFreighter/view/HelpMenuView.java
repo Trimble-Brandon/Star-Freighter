@@ -37,12 +37,35 @@ public class HelpMenuView extends View
             + "\nQ - Back to previous menu                                    |"
             + "\n--------------------------------------------------------------");
 
-        this.infoText = "\nInfo Yay!";
-        this.movementText = "\nMovement Yay!";
-        this.captainText = "\nCaptain Yay!";
-        this.incomeText = "\nIncome Yay!";
-        this.shipText = "\nShip Yay!";
-        this.shopsText = "\nShops Yay!";
+        this.infoText = "\nStarFreighter is a game where you will act as the "
+                      + "\nship captain. You have just gotten a ship and need "
+                      + "\nto get it repaired and spaceworthy. You will take "
+                      + "\njobs to make money and recruit crew to develop skills"
+                      + "\n to fulfill roles on your ship.";
+        
+        this.movementText = "\nMovement will be based on locations that you "
+                          + "\nselect. Jobs will be based in locations. When "
+                          + "\nthe ship is repaired this is how you will launch"
+                          + "\n the ship into space.";
+        
+        this.captainText = "\nYou are the acting captain, having acquired this "
+                         + "\nship. You will gain experience and fulfill a role"
+                         + "\n of your choosing that will benefit your ship and"
+                         + "\n crew. Lead wisely!";
+        
+        this.incomeText = "\nYou will gain your income through jobs completed. "
+                        + "\nIncome is used to hire crew, obtain upgrades, "
+                        + "\nmaintain your ship through repairs, and purchase "
+                        + "\nitems.";
+        
+        this.shipText = "\n\"Wherever we want to go, we'll go. That's what a "
+                      + "\nship is, you know. It's not just a keel and a hull "
+                      + "\nand a deck and sails, that's what a ship needs but "
+                      + "\nwhat a ship is... what a ship really is... is freedom.\"";
+        
+        this.shopsText = "\nThe shops present you with wares to improve upon "
+                       + "\nyour ship and provide much needed repairs for damages. "
+                       + "\nNo duct tape I'm afraid...";
     }
 
     public boolean doAction(String value) 
