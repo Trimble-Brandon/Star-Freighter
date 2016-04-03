@@ -85,7 +85,6 @@ public class GameControl
         game.setShip(ship);
         
         Map map = MapControl.createNewMap();
-        MapControl.moveActorsToStartingLocation(map);
     }
 
     private static InventoryItem[] createInventoryList() {
