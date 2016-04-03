@@ -56,7 +56,7 @@ public class MainMenuView extends View
     }
 
     private void startExistingGame() {
-        this.console.println("\n\nEnter the file path for file where the game is to be saved");
+        this.console.println("\n\nEnter the file path for file where the game is saved");
         
         String filePath = this.getInput();
         
@@ -88,7 +88,7 @@ public class MainMenuView extends View
             ErrorView.display("MainMenuView", e.getMessage());
         }
         
-        //Display successful save
+        System.out.println("Save successful!");
     }
     
 }
