@@ -15,14 +15,11 @@ import byui.cit260.starFreighter.model.Map;
 public class MapControl {
 
     static Map createNewMap() {
-        System.out.println("createNewMap has been called!");
-        return null;
+        Map map = new Map();
+        map.setLocation(new Location(1, "Ship bay", "Location of your new ship while it's being repaired"));
+        return map;
     }
-
-    static void moveActorsToStartingLocation(Map map) {
-        
-        
-    }
+    
     public boolean move(Map map, Location loc) {
         if (map.getLocation() == loc) {
             return false;
