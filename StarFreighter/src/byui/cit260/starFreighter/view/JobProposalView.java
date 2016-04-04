@@ -5,9 +5,9 @@
  */
 package byui.cit260.starFreighter.view;
 
+import byui.cit260.starFreighter.control.InventoryControl;
 import byui.cit260.starFreighter.control.JobControl;
 import byui.cit260.starFreighter.model.Game;
-import byui.cit260.starFreighter.model.Job;
 import byui.cit260.starFreighter.model.Player;
 import starfreighter.StarFreighter;
 
@@ -18,10 +18,10 @@ import starfreighter.StarFreighter;
 class JobProposalView extends View {
     public JobProposalView() {
         super("Here are the details of the job you selected:"
-                + "\nDescription - " + StarFreighter.getCurrentJob().getDescription()
-                + "\nDifficulty - " + StarFreighter.getCurrentJob().getDifficulty()
-                + "\nMonitary Compensation - " + StarFreighter.getCurrentJob().getCurrencyReward()
-                + "\nItem Compensation - " + StarFreighter.getCurrentJob().getItemReward()
+                + "\nDescription - " + StarFreighter.getCurrentGame().getCurrentJob().getDescription()
+                + "\nDifficulty - " + StarFreighter.getCurrentGame().getCurrentJob().getDifficulty()
+                + "\nMonitary Compensation - " + StarFreighter.getCurrentGame().getCurrentJob().getCurrencyReward()
+                + "\nItem Compensation - " + StarFreighter.getCurrentGame().getCurrentJob().getItemReward().getItemType()
                 + "\n\nIf you would like to continue with this job, enter y for yes, else type n or q");
     }
 
@@ -30,13 +30,14 @@ class JobProposalView extends View {
         Game curGame = StarFreighter.getCurrentGame();
         Player player = curGame.getPlayer();
         JobControl jc = new JobControl();
+        InventoryControl ic = new InventoryControl();
         switch(choice) {
             case "Y":
                 player.setExperience(player.getExperience() 
-                        + jc.calcExpReward(StarFreighter.getCurrentJob().getDifficulty()));
+                        + jc.calcExpReward(curGame.getCurrentJob().getDifficulty()));
                 //add money
-                //add item
                 
+                ic.addToInventory(curGame.getCurrentJob().getItemReward());
                 break;
             default:
                 break;

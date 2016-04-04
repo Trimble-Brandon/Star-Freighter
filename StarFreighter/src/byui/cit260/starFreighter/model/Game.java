@@ -6,6 +6,7 @@
 package byui.cit260.starFreighter.model;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -18,10 +19,11 @@ public class Game implements Serializable
     private Integer noPeople;
     private int totalTime;
     private Ship ship;
-    private InventoryItem[] inventory;
+    private List<InventoryItem> inventory;
     private Player player;
     private GameCharacter characters;
     private Map map;
+    private static Job currentJob = null;
     
 
     //Default constructor
@@ -100,11 +102,11 @@ public class Game implements Serializable
         this.ship = ship;
     }
 
-    public InventoryItem[] getInventory() {
+    public List<InventoryItem> getInventory() {
         return inventory;
     }
 
-    public void setInventory(InventoryItem[] inventory) {
+    public void setInventory(List<InventoryItem> inventory) {
         this.inventory = inventory;
     }
 
@@ -131,6 +133,12 @@ public class Game implements Serializable
     public void setMap(Map map) {
         this.map = map;
     }
-    
-    
+
+    public static Job getCurrentJob() {
+        return currentJob;
+    }
+
+    public static void setCurrentJob(Job currentJob) {
+        Game.currentJob = currentJob;
+    }
 }

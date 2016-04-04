@@ -15,6 +15,8 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import java.util.List;
 import starfreighter.StarFreighter;
 
 /**
@@ -54,7 +56,13 @@ public class GameControl
     
     public enum Item
     {
-        money;
+        money,
+        squirtGun,
+        pistol,
+        pistolSword,
+        rifle,
+        hCannon,
+        lightsaber;
     }
     
     public static Player createPlayer(String playerName) throws GameControlException {
@@ -77,7 +85,7 @@ public class GameControl
         
         game.setPlayer(player);
         
-        InventoryItem[] inventoryList = GameControl.createInventoryList();
+        List<InventoryItem> inventoryList = GameControl.createInventoryList();
         
         game.setInventory(inventoryList);
         
@@ -87,16 +95,55 @@ public class GameControl
         Map map = MapControl.createNewMap();
     }
 
-    private static InventoryItem[] createInventoryList() {
-        InventoryItem[] inventory = new InventoryItem[1];
+    private static List<InventoryItem> createInventoryList() {
+        List<InventoryItem> inventory = new ArrayList();
         
         //item 1
-        InventoryItem money = new InventoryItem();
-        money.setDescription("Money");
-        money.setQuantity(0);
-        inventory[Item.money.ordinal()] = money;
+        InventoryItem money = new InventoryItem("Money", 0, "Currency", 0);
+        inventory.add(money);
+        
+        //item 2
+        InventoryItem squirtGun = new InventoryItem("*Squirt gun*", 
+                                                    0, 
+                                                    "Powerfull pistol for the purpose of propelling a water jet", 
+                                                    1);
+        inventory.add(squirtGun);
+        
+        //item 3
+        InventoryItem pistol = new InventoryItem("*Pistol*", 
+                                                    0, 
+                                                    "Small hand held projectile weapon", 
+                                                    1);
+        inventory.add(pistol);
+        
+        //item 4
+        InventoryItem pistolSword = new InventoryItem("*Pistol & Sword*", 
+                                                    0, 
+                                                    "Small hand held projectile weapon and a clamour", 
+                                                    3);
+        inventory.add(pistolSword);
+        
+        //item 5
+        InventoryItem rifle = new InventoryItem("*Rifle*", 
+                                                    0, 
+                                                    "Long range projectile weapon", 
+                                                    2);
+        inventory.add(rifle);
+        
+        //item 6
+        InventoryItem hCannon = new InventoryItem("*Hand Cannon*", 
+                                                    0, 
+                                                    "Powerful short range large projectile weapon", 
+                                                    2);
+        inventory.add(hCannon);
+        
+        //item 7 
+        InventoryItem lightsaber = new InventoryItem("*Lightsaber ===|-----------*", 
+                                                    0, 
+                                                    "Awesomeness", 
+                                                    3);
+        inventory.add(lightsaber);
         
         return inventory;
     }
-  
 }

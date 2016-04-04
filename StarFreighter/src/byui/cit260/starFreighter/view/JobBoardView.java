@@ -24,7 +24,7 @@ public class JobBoardView extends View {
     private String description;
     private int difficulty;
     private double currencyReward;
-    private String itemReward;
+    private InventoryItem itemReward;
     
     public JobBoardView() {
         super("\n"
@@ -130,7 +130,7 @@ public class JobBoardView extends View {
                     return false;
             }
             Job job = new Job(description, difficulty, currencyReward, itemReward);
-            StarFreighter.setCurrentJob(job);
+            StarFreighter.getCurrentGame().setCurrentJob(job);
             JobProposalView jpv = new JobProposalView();
             jpv.display();
             return true;

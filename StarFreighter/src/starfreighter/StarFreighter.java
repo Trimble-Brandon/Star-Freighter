@@ -11,6 +11,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -27,52 +29,38 @@ public class StarFreighter
     private static Player player = null;
     
     private static PrintWriter logFile = null;
-    
-    private static Job currentJob = null;
-
-    public static Job getCurrentJob() {
-        return currentJob;
-    }
-
-    public static void setCurrentJob(Job job) {
-        StarFreighter.currentJob = job;
-    }
-
-    public static Game getCurrentGame() 
-    {
-        return currentGame;
-    }
-
-    public static void setCurrentGame(Game currentGame) 
-    {
-        StarFreighter.currentGame = currentGame;
-    }
-
-    public static Player getPlayer() 
-    {
-        return player;
-    }
-
-    public static void setPlayer(Player player) 
-    {
-        StarFreighter.player = player;
-    }
 
     public static PrintWriter getOutFile() {
         return outFile;
     }
 
-    public static void setOutFile(PrintWriter outfile) {
-        StarFreighter.outFile = outfile;
+    public static void setOutFile(PrintWriter outFile) {
+        StarFreighter.outFile = outFile;
     }
 
     public static BufferedReader getInFile() {
         return inFile;
     }
 
-    public static void setInFile(BufferedReader infile) {
-        StarFreighter.inFile = infile;
-    }    
+    public static void setInFile(BufferedReader inFile) {
+        StarFreighter.inFile = inFile;
+    }
+
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        StarFreighter.currentGame = currentGame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        StarFreighter.player = player;
+    }
 
     public static PrintWriter getLogFile() {
         return logFile;
@@ -81,6 +69,8 @@ public class StarFreighter
     public static void setLogFile(PrintWriter logFile) {
         StarFreighter.logFile = logFile;
     }
+
+    
 
     /**
      * @param args the command line arguments

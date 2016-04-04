@@ -7,6 +7,7 @@ package byui.cit260.starFreighter.control;
 
 import byui.cit260.starFreighter.exceptions.JobControlException;
 import byui.cit260.starFreighter.model.Game;
+import byui.cit260.starFreighter.model.InventoryItem;
 import starfreighter.StarFreighter;
 
 /**
@@ -73,37 +74,50 @@ public class JobControl
         return cReward; 
     }
     
-    public String calcItemReward(int cDiff)
+    public InventoryItem calcItemReward(int cDiff)
     {
         //variables
-        String iReward = null;
+        InventoryItem iReward = new InventoryItem();
         
         //calculation
         if (cDiff == 1)
         {
-            iReward = "*Squirt gun*";
+            iReward.setItemType("*Squirt gun*");
+            iReward.setDescription("Powerfull pistol for the purpose of propelling a water jet");
+            iReward.setItemSize(1);
         }
-        else if (cDiff > 1 && cDiff < 4)
+        else if (cDiff < 4)
         {
-            iReward = "*Pistol*";
+            iReward.setItemType("*Pistol*");
+            iReward.setDescription("Small hand held projectile weapon");
+            iReward.setItemSize(1);
         }
-        else if (cDiff > 3 && cDiff < 6)
+        else if (cDiff < 6)
         {
-            iReward = "*Pistol & Sword*";
+            iReward.setItemType("*Pistol & Sword*");
+            iReward.setDescription("Small hand held projectile weapon and a clamour");
+            iReward.setItemSize(3);
         }
-        else if (cDiff > 5 && cDiff < 8)
+        else if (cDiff < 8)
         {
-            iReward = "*Rifle*";
+            iReward.setItemType("*Rifle*");
+            iReward.setDescription("Long range projectile weapon");
+            iReward.setItemSize(2);
         }
-        else if (cDiff > 7 && cDiff < 10)
+        else if (cDiff < 10)
         {
-            iReward = "*Hand Cannon*";
+            iReward.setItemType("*Hand Cannon*");
+            iReward.setDescription("Powerful short range large projectile weapon");
+            iReward.setItemSize(2);
         }
         else
         {
-            iReward = "*Lightsaber ===|-----------*";
+            iReward.setItemType("*Lightsaber ===|-----------*");
+            iReward.setDescription("Awesomeness");
+            iReward.setItemSize(3);
         }
         
+        iReward.setQuantity(1);
         return iReward;
     }
     

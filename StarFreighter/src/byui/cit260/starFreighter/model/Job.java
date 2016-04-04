@@ -15,13 +15,13 @@ public class Job {
     private String description;
     private int difficulty;
     private double currencyReward;
-    private String itemReward;
+    private InventoryItem itemReward;
 
     public Job() {
         
     }
     
-    public Job(String description, int difficulty, double currencyReward, String itemReward) {
+    public Job(String description, int difficulty, double currencyReward, InventoryItem itemReward) {
         this.description = description;
         this.difficulty = difficulty;
         this.currencyReward = currencyReward;
@@ -91,11 +91,11 @@ public class Job {
         this.currencyReward = currencyReward;
     }
 
-    public String getItemReward() {
+    public InventoryItem getItemReward() {
         return itemReward;
     }
 
-    public void setItemReward(String itemReward) {
+    public void setItemReward(InventoryItem itemReward) {
         this.itemReward = itemReward;
     }
     

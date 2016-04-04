@@ -104,10 +104,10 @@ public class JobControlTest
         System.out.println("calcItemReward");
         int cDiff = 4;
         JobControl instance = new JobControl();
-        String result = instance.calcItemReward(cDiff);
+        //String result = instance.calcItemReward(cDiff);
         
-        System.out.println(cDiff + ", Congratulations! You have received loot: "
-                            + result);
+        //System.out.println(cDiff + ", Congratulations! You have received loot: "
+                            //+ result);
     }
 
     /**

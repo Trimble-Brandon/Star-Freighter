@@ -18,6 +18,14 @@ public class InventoryItem {
     private Integer itemSize;
 
     public InventoryItem() {
+        
+    }
+
+    public InventoryItem(String itemType, Integer quantity, String description, Integer itemSize) {
+        this.itemType = itemType;
+        this.quantity = quantity;
+        this.description = description;
+        this.itemSize = itemSize;
     }
 
     @Override
