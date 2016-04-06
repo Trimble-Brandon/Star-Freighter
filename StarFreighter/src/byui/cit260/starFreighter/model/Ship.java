@@ -24,11 +24,11 @@ public class Ship implements Serializable {
     public Ship() {
         this.description = "";
         this.maxCapacity = 1000; //The fire marshall says so
-        this.engine = 1;
         this.fuelLevel = 100;
-        this.hull = 100;
-        this.electrical = 100;
-        this.lifeSupport = 100;
+        this.hull = 0;
+        this.engine = 0;
+        this.electrical = 0;
+        this.lifeSupport = 0;
     }
 
     @Override
