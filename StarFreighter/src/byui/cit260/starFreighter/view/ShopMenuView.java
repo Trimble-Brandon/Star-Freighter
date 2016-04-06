@@ -5,9 +5,9 @@
  */
 package byui.cit260.starFreighter.view;
 
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import byui.cit260.starFreighter.control.InventoryControl;
+import byui.cit260.starFreighter.model.InventoryItem;
+import starfreighter.StarFreighter;
 
 /**
  *
@@ -15,22 +15,6 @@ import java.util.logging.Logger;
  */
 public class ShopMenuView extends View
 {    
-    public int getPistolSupply()
-    {
-        String pistols[] = {"RedPistol", "FlintPistol", "BBPistol"}; //placeholder until we've got the inventory set up
-        int pistolSupply = 0;
-        int count = 0;
-        
-        for (int i = 0; i < pistols.length - 1; i++)
-        {
-            count++;
-        }
-        pistolSupply = count;
-            
-        
-        return pistolSupply;
-    }
-    
     public ShopMenuView() 
     {
         super("\n"
@@ -47,21 +31,56 @@ public class ShopMenuView extends View
 
     
     @Override
-    public boolean doAction(String value) 
-    {
+    public boolean doAction(String value) {
+        int cost = 0;
+        InventoryItem item = null;
+        InventoryItem mon = StarFreighter.getCurrentGame().getInventory().get(0);
+        InventoryControl ic = new InventoryControl();
         switch(value)
         {
             case "1":
-                //this.displayInfo(foodText);
+                cost = 50;
+                item = new InventoryItem("Food", 1, "Stuff you eat", 1);
+                if (mon.getQuantity() >= cost) {
+                    ic.addToInventory(item);
+                    ic.removeFromInventory("Money", cost);
+                    console.println("You purchased " + item.getItemType() + ", and have $" + mon.getQuantity() + " left.");
+                } else {
+                    console.println("You do not have enough money");
+                }
                 break;
             case "2":
-                //this.displayInfo(ammoText);
+                cost = 20;
+                item = new InventoryItem("Ammunition", 1, "Stuff shoot with", 1);
+                if (mon.getQuantity() >= cost) {
+                    ic.addToInventory(item);
+                    ic.removeFromInventory("Money", cost);
+                    console.println("You purchased " + item.getItemType() + ", and have $" + mon.getQuantity() + " left.");
+                } else {
+                    console.println("You do not have enough money");
+                }
                 break;
             case "3":
-                //this.displayInfo(medText);
+                cost = 35;
+                item = new InventoryItem("Medical Supplies", 1, "Stuff heal with", 1);
+                if (mon.getQuantity() >= cost) {
+                    ic.addToInventory(item);
+                    ic.removeFromInventory("Money", cost);
+                    console.println("You purchased " + item.getItemType() + ", and have $" + mon.getQuantity() + " left.");
+                } else {
+                    console.println("You do not have enough money");
+                }
                 break;
             case "4":
-                //this.displayInfo(pistolText);
+                cost = 100;
+                item = new InventoryItem("Flintlock Pistol", 1, "Thing that shoots the stuff you shoot with", 2);
+                if (mon.getQuantity() >= cost) {
+                    ic.addToInventory(item);
+                    ic.removeFromInventory("Money", cost);
+                    console.println("You purchased " + item.getItemType() + ", and have $" + mon.getQuantity() + " left.");
+                } else {
+                    console.println("You do not have enough money");
+                }
                 break;
             case "R":
                 RepairMenuView repair = new RepairMenuView();

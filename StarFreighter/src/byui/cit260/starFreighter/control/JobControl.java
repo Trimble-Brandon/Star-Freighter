@@ -27,7 +27,7 @@ public class JobControl
        }
        else
        {
-           cDiff = difficulty - skill;
+           cDiff = difficulty + skill;
            
            if (cDiff <= 0)
            {
@@ -40,7 +40,7 @@ public class JobControl
        }
     }
     
-    public int calcCurrencyReward(int cDiff)
+    public InventoryItem calcCurrencyReward(int cDiff)
     {
         //variables
         int cReward = 0;
@@ -50,19 +50,19 @@ public class JobControl
         {
             cReward = 15;
         }
-        else if (cDiff > 1 && cDiff < 4)
+        else if (cDiff < 4)
         {
             cReward = 25;
         }
-        else if (cDiff > 3 && cDiff < 6)
+        else if (cDiff < 6)
         {
             cReward = 50;
         }
-        else if (cDiff > 5 && cDiff < 8)
+        else if (cDiff < 8)
         {
             cReward = 100;
         }
-        else if (cDiff > 7 && cDiff < 10)
+        else if (cDiff < 10)
         {
             cReward = 200;
         }
@@ -71,7 +71,7 @@ public class JobControl
             cReward = 500;
         }
         
-        return cReward; 
+        return new InventoryItem("Money", cReward, "Currency", 0);
     }
     
     public InventoryItem calcItemReward(int cDiff)

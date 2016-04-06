@@ -35,8 +35,7 @@ class JobProposalView extends View {
             case "Y":
                 player.setExperience(player.getExperience() 
                         + jc.calcExpReward(curGame.getCurrentJob().getDifficulty()));
-                //add money
-                
+                ic.addToInventory(curGame.getCurrentJob().getCurrencyReward());
                 ic.addToInventory(curGame.getCurrentJob().getItemReward());
                 break;
             default:

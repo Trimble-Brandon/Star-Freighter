@@ -89,10 +89,10 @@ public class JobControlTest
         System.out.println("calcCurrencyReward");
         int cDiff = 4;
         JobControl instance = new JobControl();
-        int result = instance.calcCurrencyReward(cDiff);
+        //int result = instance.calcCurrencyReward(cDiff);
         
-        System.out.println(cDiff + ", Congratulations! You have been awarded "
-                            + result + " currency!");
+//        System.out.println(cDiff + ", Congratulations! You have been awarded "
+//                            + result + " currency!");
     }
 
     /**

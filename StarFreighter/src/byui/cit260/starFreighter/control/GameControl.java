@@ -104,42 +104,42 @@ public class GameControl
         inventory.add(money);
         
         //item 2
-        InventoryItem squirtGun = new InventoryItem("*Squirt gun*", 
+        InventoryItem squirtGun = new InventoryItem("Squirt gun", 
                                                     0, 
                                                     "Powerfull pistol for the purpose of propelling a water jet", 
                                                     1);
         inventory.add(squirtGun);
         
         //item 3
-        InventoryItem pistol = new InventoryItem("*Pistol*", 
+        InventoryItem pistol = new InventoryItem("Pistol", 
                                                     0, 
                                                     "Small hand held projectile weapon", 
                                                     1);
         inventory.add(pistol);
         
         //item 4
-        InventoryItem pistolSword = new InventoryItem("*Pistol & Sword*", 
+        InventoryItem pistolSword = new InventoryItem("Pistol & Sword", 
                                                     0, 
                                                     "Small hand held projectile weapon and a clamour", 
                                                     3);
         inventory.add(pistolSword);
         
         //item 5
-        InventoryItem rifle = new InventoryItem("*Rifle*", 
+        InventoryItem rifle = new InventoryItem("Rifle", 
                                                     0, 
                                                     "Long range projectile weapon", 
                                                     2);
         inventory.add(rifle);
         
         //item 6
-        InventoryItem hCannon = new InventoryItem("*Hand Cannon*", 
+        InventoryItem hCannon = new InventoryItem("Hand Cannon", 
                                                     0, 
                                                     "Powerful short range large projectile weapon", 
                                                     2);
         inventory.add(hCannon);
         
         //item 7 
-        InventoryItem lightsaber = new InventoryItem("*Lightsaber ===|-----------*", 
+        InventoryItem lightsaber = new InventoryItem("Lightsaber ===|-----------", 
                                                     0, 
                                                     "Awesomeness", 
                                                     3);
