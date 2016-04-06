@@ -8,6 +8,7 @@ package byui.cit260.starFreighter.view;
 import byui.cit260.starFreighter.control.GameControl;
 import byui.cit260.starFreighter.model.InventoryItem;
 import java.util.List;
+import starfreighter.StarFreighter;
 
 /**
  *
@@ -46,7 +47,7 @@ class GameMenuView extends View
                 this.displayInventory();
                 break;
             case "C":
-                CharacterMenuView cMenu = new CharacterMenuView(player);
+                CharacterMenuView cMenu = new CharacterMenuView(StarFreighter.getCurrentGame().getPlayer());
                 cMenu.display();
                 break;
             case "N":
