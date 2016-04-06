@@ -40,6 +40,10 @@ public class CharacterMenuView extends View
             case "1":
                 this.displayInfo(captainText);
                 break;
+            case "2":
+                return true;
+            default:
+                System.out.println("Please choose a correct value");
         }
         
         return false;
