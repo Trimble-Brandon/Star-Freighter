@@ -100,7 +100,7 @@ public class GameControl
         List<InventoryItem> inventory = new ArrayList();
         
         //item 1
-        InventoryItem money = new InventoryItem("Money", 0, "Currency", 0);
+        InventoryItem money = new InventoryItem("Money", 200, "Currency", 0);
         inventory.add(money);
         
         //item 2

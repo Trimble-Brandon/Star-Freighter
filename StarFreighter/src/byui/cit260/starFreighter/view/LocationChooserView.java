@@ -94,7 +94,8 @@ public class LocationChooserView extends View {
                 loc.setLocation(10);
                 loc.setLocationName("Launch Ship");
                 map.setLocation(loc);
-                LaunchShipView.promptMessage();
+                LaunchShipView lsv = new LaunchShipView();
+                lsv.display();
                 return true;
             case "Q":
                 return true;

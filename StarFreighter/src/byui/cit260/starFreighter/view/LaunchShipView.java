@@ -11,9 +11,29 @@ package byui.cit260.starFreighter.view;
  */
 public class LaunchShipView extends View
 {
-    public static void promptMessage()
+    public LaunchShipView() 
     {
-        System.out.println("Do you want to Launch the Ship? y/n: ");
+        super("Do you want to Launch the Ship? y/n: ");
+    }
+    public void launch()
+    {
+        console.println("\n**************************************************************"
+                    + "\n*                                                            *"
+                    + "\n*                                                            *"
+                    + "\n*                                                            *"
+                    + "\n*                                                            *"
+                    + "\n*                                                            *"
+                    + "\n*                                                            *"
+                    + "\n*                                                            *"
+                    + "\n*                  insert of rocket launch                   *"
+                    + "\n*                           coming                           *"
+                    + "\n*                            soon                            *"
+                    + "\n*                                                            *"
+                    + "\n*                                                            *"
+                    + "\n*                                                            *"
+                    + "\n*                                                            *"
+                    + "\n*                                                            *"
+                    + "\n**************************************************************");
     }
     
     public boolean doAction(String value) 
@@ -21,36 +41,15 @@ public class LaunchShipView extends View
         switch(value)
         {
             case "Y":
-                System.out.println("Yes!");
-                break;
+                this.launch();
+                return true;
             case "N":
                 System.out.println("No!");
-                break;
+                return false;
             default:
                 this.console.println("Invalid selection. Please try again.");
         }
         return false;
-    }
-
-    private LaunchShipView() 
-    {
-        super("\n**************************************************************"
-            + "\n*                                                            *"
-            + "\n*                                                            *"
-            + "\n*                                                            *"
-            + "\n*                                                            *"
-            + "\n*                                                            *"
-            + "\n*                                                            *"
-            + "\n*                                                            *"
-            + "\n*                  insert of rocket launch                   *"
-            + "\n*                           coming                           *"
-            + "\n*                            soon                            *"
-            + "\n*                                                            *"
-            + "\n*                                                            *"
-            + "\n*                                                            *"
-            + "\n*                                                            *"
-            + "\n*                                                            *"
-            + "\n**************************************************************");
     }
     
 }
