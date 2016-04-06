@@ -25,8 +25,9 @@ import starfreighter.StarFreighter;
  */
 public class GameControl 
 {
-    public static InventoryItem[] getSortedInventoryList() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public static List<InventoryItem> getSortedInventoryList() {
+        List<InventoryItem> inventoryList = StarFreighter.getCurrentGame().getInventory();
+        return inventoryList;
     }
 
     public static void saveGame(Game currentGame, String filePath) throws GameControlException {

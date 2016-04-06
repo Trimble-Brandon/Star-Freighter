@@ -7,6 +7,7 @@ package byui.cit260.starFreighter.view;
 
 import byui.cit260.starFreighter.control.GameControl;
 import byui.cit260.starFreighter.model.InventoryItem;
+import java.util.List;
 
 /**
  *
@@ -42,7 +43,6 @@ class GameMenuView extends View
                 jBoard.display();
                 break;
             case "I":
-                System.out.println("Placeholder for Inventory view");
                 this.displayInventory();
                 break;
             case "C":
@@ -58,15 +58,14 @@ class GameMenuView extends View
 
     private void displayInventory() 
     {
-        InventoryItem[] inventory = GameControl.getSortedInventoryList();
+        List<InventoryItem> inventoryList = GameControl.getSortedInventoryList();
         
         this.console.println("\nList of Inventory Items!");
         this.console.println("Description" + "\t" +
-                           "Required" + "\t" +
-                           "In Stock");
+                           "Required" + "\t");
         
-        for (InventoryItem item : inventory) {
-	this.console.println(item.getDescription() + "\t   " +
+        for (InventoryItem item : inventoryList) {
+            this.console.println(item.getItemType() + "\t   " +
                      item.getQuantity() + "\t   ");
         }   
     }
