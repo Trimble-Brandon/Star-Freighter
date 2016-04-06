@@ -18,15 +18,14 @@ public class CharacterMenuView extends View
 {
     private final String captainText;
     
-    CharacterMenuView(String message, Player player) 
+    public CharacterMenuView(Player player) 
     {
-        super(message);
-        
-        this.console.println("\n==============================================="
-                           + "\n| Character Menu |                            |"
-                           + "\n1 - Captain " + player.getName() + "          |"
-                           + "\n                                              |"
-                           + "\n===============================================");
+        super("\n"
+                + "\n=========================================================="
+                + "\n| Character Menu |                                       |"
+                + "\n1 - Captain " + player.getName() + "                     |"
+                + "\n                                                         |"
+                + "\n==========================================================");
         
         this.captainText = "\nCaptain of the ship and the first crew member. As"
                          + "\n you gain experience you will be able to allocate"

@@ -46,7 +46,8 @@ class GameMenuView extends View
                 this.displayInventory();
                 break;
             case "C":
-                System.out.println("");
+                CharacterMenuView cMenu = new CharacterMenuView(player);
+                cMenu.display();
                 break;
             case "N":
                 return true;
