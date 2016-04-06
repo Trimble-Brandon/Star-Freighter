@@ -38,7 +38,8 @@ class GameMenuView extends View
                 sMenu.display();
                 break;
             case "J":
-                System.out.println("Placeholder for Job board");
+                JobBoardView jBoard = new JobBoardView();
+                jBoard.display();
                 break;
             case "I":
                 System.out.println("Placeholder for Inventory view");
