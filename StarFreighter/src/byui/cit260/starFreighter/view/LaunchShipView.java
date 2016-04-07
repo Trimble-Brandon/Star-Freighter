@@ -5,6 +5,8 @@
  */
 package byui.cit260.starFreighter.view;
 
+import byui.cit260.starFreighter.model.Ship;
+
 /**
  *
  * @author Brandon
@@ -62,8 +64,10 @@ public class LaunchShipView extends View
         switch(value)
         {
             case "Y":
-                this.launch();
-                return true;
+                if (Ship.fuelLevel > 0 && Ship.hull >= 90 && Ship.engine >= 90 && 
+                    Ship.electrical >= 90 && Ship.lifeSupport >= 90)
+                    this.launch();
+                    return true;
             case "N":
                 System.out.println("No!");
                 return false;
