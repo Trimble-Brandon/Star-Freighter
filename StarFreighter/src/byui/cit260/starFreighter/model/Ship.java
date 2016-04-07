@@ -16,7 +16,7 @@ public class Ship implements Serializable {
     private String description;
     private Integer maxCapacity;
     private Integer engine;
-    private Integer fuelLevel;
+    public Integer fuelLevel;
     private Integer hull;
     private Integer electrical;
     private Integer lifeSupport;
