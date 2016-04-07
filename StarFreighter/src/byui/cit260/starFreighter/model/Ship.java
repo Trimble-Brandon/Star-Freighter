@@ -24,7 +24,7 @@ public class Ship implements Serializable {
     public Ship() {
         this.description = "";
         this.maxCapacity = 1000; //The fire marshall says so
-        this.fuelLevel = 100;
+        this.fuelLevel = 0;
         this.hull = 0;
         this.engine = 0;
         this.electrical = 0;

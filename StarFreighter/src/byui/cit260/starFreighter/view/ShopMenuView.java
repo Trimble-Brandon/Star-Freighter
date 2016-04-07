@@ -7,6 +7,7 @@ package byui.cit260.starFreighter.view;
 
 import byui.cit260.starFreighter.control.InventoryControl;
 import byui.cit260.starFreighter.model.InventoryItem;
+import byui.cit260.starFreighter.model.Ship;
 import starfreighter.StarFreighter;
 
 /**
@@ -24,6 +25,7 @@ public class ShopMenuView extends View
             + "\n2 - Ammunition                                           *20 |"
             + "\n3 - Medical Supplies                                     *35 |"
             + "\n4 - Flintlock Pistol                                    *100 |"
+            + "\n5 - Fuel                                                *200 |"
             + "\nR - Repair and upgrades menu                                 |"   
             + "\nQ - Quit to game menu                                        |"
             + "\n--------------------------------------------------------------");
@@ -76,6 +78,17 @@ public class ShopMenuView extends View
                 item = new InventoryItem("Flintlock Pistol", 1, "Thing that shoots the stuff you shoot with", 2);
                 if (mon.getQuantity() >= cost) {
                     ic.addToInventory(item);
+                    ic.removeFromInventory("Money", cost);
+                    console.println("You purchased " + item.getItemType() + ", and have $" + mon.getQuantity() + " left.");
+                } else {
+                    console.println("You do not have enough money");
+                }
+                break;
+            case "5":
+                cost = 200;
+                if (mon.getQuantity() >= cost) {
+                    Ship ship = StarFreighter.getCurrentGame().getShip();
+                    ship.setFuelLevel(ship.getFuelLevel() + 10);
                     ic.removeFromInventory("Money", cost);
                     console.println("You purchased " + item.getItemType() + ", and have $" + mon.getQuantity() + " left.");
                 } else {
