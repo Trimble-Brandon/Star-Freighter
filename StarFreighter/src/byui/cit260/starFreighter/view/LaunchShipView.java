@@ -67,9 +67,11 @@ public class LaunchShipView extends View
         switch(value)
         {
             case "Y":
-                if (ship.getFuelLevel() > 0 && ship.getHull() >= 90 && ship.getEngine() >= 90 && 
-                    ship.getElectrical() >= 90 && ship.getLifeSupport() >= 90)
-                {
+                if (ship.getFuelLevel() > 0 
+                        && ship.getHull() >= 90 
+                        && ship.getEngine() >= 90 
+                        && ship.getElectrical() >= 90 
+                        && ship.getLifeSupport() >= 90) {
                     this.launch();
                     System.exit(0);
                 }
@@ -80,7 +82,7 @@ public class LaunchShipView extends View
                 }
             case "N":
                 System.out.println("No!");
-                return false;
+                return true;
             default:
                 this.console.println("Invalid selection. Please try again.");
         }

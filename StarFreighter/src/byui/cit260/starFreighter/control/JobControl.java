@@ -21,7 +21,7 @@ public class JobControl
        //variables
        int cDiff = 0;
     
-       if (difficulty < 1 || difficulty > 10 || skill < 1 || skill > 10)
+       if (difficulty < 1 || difficulty > 30 || skill < 1 || skill > 10)
        {
             throw new JobControlException("Error calculating corrected difficulty");
        }
