@@ -49,6 +49,6 @@ public class RepairControl
     
     public int calcCost(int timeToComplete, int skill, int amountRepaired) 
     {
-        return timeToComplete + amountRepaired - skill;
+        return (timeToComplete + amountRepaired - skill)*10;
     }
 }

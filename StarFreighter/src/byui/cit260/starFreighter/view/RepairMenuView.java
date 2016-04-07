@@ -53,7 +53,8 @@ public class RepairMenuView extends View {
                     if(cur != 100) {
                         mon.setQuantity(mon.getQuantity() - cost);
                         ship.setHull(cur + rc.calcRepair(cur));
-                        console.println("Ship's hull is now at " + ship.getHull() + "%");
+                        console.println("Ship's hull is now at " + ship.getHull() + "%"
+                                + "\nIt cost " + cost + " and took " + time + " days.");
                     } else {
                         console.println("Ship's hull is already at 100%");
                     }
@@ -71,7 +72,8 @@ public class RepairMenuView extends View {
                     if(cur != 100) {
                         mon.setQuantity(mon.getQuantity() - cost);
                         ship.setElectrical(cur + rc.calcRepair(cur));
-                        console.println("Ship's electrical system is now at " + ship.getElectrical()+ "%");
+                        console.println("Ship's electrical system is now at " + ship.getElectrical()+ "%"
+                                + "\nIt cost " + cost + " and took " + time + " days.");
                     } else {
                         console.println("Ship's electrical system is already at 100%");
                     }
@@ -89,7 +91,8 @@ public class RepairMenuView extends View {
                     if(cur != 100) {
                         mon.setQuantity(mon.getQuantity() - cost);
                         ship.setLifeSupport(cur + rc.calcRepair(cur));
-                        console.println("Ship's life support system is now at " + ship.getLifeSupport() + "%");
+                        console.println("Ship's life support system is now at " + ship.getLifeSupport() + "%"
+                                + "\nIt cost " + cost + " and took " + time + " days.");
                     } else {
                         console.println("Ship's life support system is already at 100%");
                     }
@@ -107,7 +110,8 @@ public class RepairMenuView extends View {
                     if(cur != 100) {
                         mon.setQuantity(mon.getQuantity() - cost);
                         ship.setEngine(cur + rc.calcRepair(cur));
-                        console.println("Ship's engine is now at " + ship.getEngine() + "%");
+                        console.println("Ship's engine is now at " + ship.getEngine() + "%"
+                                + "\nIt cost " + cost + " and took " + time + " days.");
                     } else {
                         console.println("Ship's engine is already at 100%");
                     }
