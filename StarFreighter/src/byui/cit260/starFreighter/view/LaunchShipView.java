@@ -68,7 +68,7 @@ public class LaunchShipView extends View
         {
             case "Y":
                 if (ship.getFuelLevel() > 0 && ship.getHull() >= 90 && ship.getEngine() >= 90 && 
-                    ship.getElectrical >= 90 && ship.getLifeSupport >= 90)
+                    ship.getElectrical() >= 90 && ship.getLifeSupport() >= 90)
                 {
                     this.launch();
                     System.exit(0);
