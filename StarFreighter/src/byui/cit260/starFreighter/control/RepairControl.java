@@ -18,7 +18,7 @@ public class RepairControl
             return -1;
         } else 
         {
-            return (int)Math.ceil((double)amountRepaired / skill)*10;
+            return (int)Math.ceil((double)amountRepaired / skill);
         }
     }
     
