@@ -18,7 +18,7 @@ public class RepairControl
             return -1;
         } else 
         {
-            return (int)Math.ceil((double)amountRepaired / skill);
+            return (int)Math.ceil((double)amountRepaired / skill)*10;
         }
     }
     
@@ -49,6 +49,6 @@ public class RepairControl
     
     public int calcCost(int timeToComplete, int skill, int amountRepaired) 
     {
-        return timeToComplete + amountRepaired - skill;
+        return (timeToComplete + amountRepaired - skill)*10;
     }
 }

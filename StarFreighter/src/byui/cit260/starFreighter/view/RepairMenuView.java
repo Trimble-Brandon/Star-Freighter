@@ -89,7 +89,8 @@ public class RepairMenuView extends View {
                     if(cur != 100) {
                         mon.setQuantity(mon.getQuantity() - cost);
                         ship.setLifeSupport(cur + rc.calcRepair(cur));
-                        console.println("Ship's life support system is now at " + ship.getLifeSupport() + "%");
+                        console.println("Ship's life support system is now at " + ship.getLifeSupport() + "%"
+                                + "\nIt cost " + cost + " and took " + time + " days.");
                     } else {
                         console.println("Ship's life support system is already at 100%");
                     }
