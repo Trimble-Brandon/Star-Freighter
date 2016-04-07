@@ -74,7 +74,12 @@ public class LaunchShipView extends View
                         && ship.getLifeSupport() >= 90) {
                     this.launch();
                     System.exit(0);
-                }                
+                }
+                else
+                {
+                    System.out.println("\nThe ship is not ready for flight. Please"
+                                     + "\nbe sure the repairs are complete.");
+                }
             case "N":
                 System.out.println("No!");
                 return true;
