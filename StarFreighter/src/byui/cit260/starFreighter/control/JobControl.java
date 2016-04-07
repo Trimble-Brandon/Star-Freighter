@@ -82,37 +82,37 @@ public class JobControl
         //calculation
         if (cDiff == 1)
         {
-            iReward.setItemType("*Squirt gun*");
+            iReward.setItemType("Squirt gun");
             iReward.setDescription("Powerfull pistol for the purpose of propelling a water jet");
             iReward.setItemSize(1);
         }
         else if (cDiff < 4)
         {
-            iReward.setItemType("*Pistol*");
+            iReward.setItemType("Pistol");
             iReward.setDescription("Small hand held projectile weapon");
             iReward.setItemSize(1);
         }
         else if (cDiff < 6)
         {
-            iReward.setItemType("*Pistol & Sword*");
+            iReward.setItemType("Pistol & Sword");
             iReward.setDescription("Small hand held projectile weapon and a clamour");
             iReward.setItemSize(3);
         }
         else if (cDiff < 8)
         {
-            iReward.setItemType("*Rifle*");
+            iReward.setItemType("Rifle");
             iReward.setDescription("Long range projectile weapon");
             iReward.setItemSize(2);
         }
         else if (cDiff < 10)
         {
-            iReward.setItemType("*Hand Cannon*");
+            iReward.setItemType("Hand Cannon");
             iReward.setDescription("Powerful short range large projectile weapon");
             iReward.setItemSize(2);
         }
         else
         {
-            iReward.setItemType("*Lightsaber ===|-----------*");
+            iReward.setItemType("Lightsaber ===|-----------");
             iReward.setDescription("Awesomeness");
             iReward.setItemSize(3);
         }

@@ -20,7 +20,7 @@ class JobProposalView extends View {
         super("Here are the details of the job you selected:"
                 + "\nDescription - " + StarFreighter.getCurrentGame().getCurrentJob().getDescription()
                 + "\nDifficulty - " + StarFreighter.getCurrentGame().getCurrentJob().getDifficulty()
-                + "\nMonitary Compensation - " + StarFreighter.getCurrentGame().getCurrentJob().getCurrencyReward()
+                + "\nMonitary Compensation - " + StarFreighter.getCurrentGame().getCurrentJob().getCurrencyReward().getQuantity()
                 + "\nItem Compensation - " + StarFreighter.getCurrentGame().getCurrentJob().getItemReward().getItemType()
                 + "\n\nIf you would like to continue with this job, enter y for yes, else type n or q");
     }
