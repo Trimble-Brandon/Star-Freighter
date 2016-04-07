@@ -77,7 +77,7 @@ public class LaunchShipView extends View
                 }                
             case "N":
                 System.out.println("No!");
-                return false;
+                return true;
             default:
                 this.console.println("Invalid selection. Please try again.");
         }
