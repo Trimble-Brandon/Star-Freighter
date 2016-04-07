@@ -25,10 +25,10 @@ public class Player
     //Default Constructor
     public Player() 
     {
-        this.hullSkill = 0;
-        this.electricalSkill = 0;
-        this.mechanicalSkill = 0;
-        this.lifeSupportSkill = 0;
+        this.hullSkill = 1;
+        this.electricalSkill = 1;
+        this.mechanicalSkill = 1;
+        this.lifeSupportSkill = 1;
         this.experience = 0;
     }
 

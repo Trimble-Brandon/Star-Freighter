@@ -5,7 +5,6 @@
  */
 package byui.cit260.starFreighter.view;
 
-import byui.cit260.starFreighter.control.GameControl;
 import byui.cit260.starFreighter.control.JobControl;
 import byui.cit260.starFreighter.exceptions.JobControlException;
 import byui.cit260.starFreighter.model.Game;
@@ -132,7 +131,7 @@ public class JobBoardView extends View {
                     break;
                 case "12":
                     description = "master physisist work, researching hyperdrive";
-                    difficulty = jc.calcCorrectDiff(10, p.getLifeSupportSkill());
+                    difficulty = jc.calcCorrectDiff(20, p.getLifeSupportSkill());
                     currencyReward = jc.calcCurrencyReward(difficulty);
                     itemReward = jc.calcItemReward(difficulty);
                     p.setLifeSupportSkill(p.getLifeSupportSkill() + 2);
