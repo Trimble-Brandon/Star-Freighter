@@ -71,7 +71,7 @@ public class LaunchShipView extends View
                     ship.getElectrical >= 90 && ship.getLifeSupport >= 90)
                 {
                     this.launch();
-                    System.exit();
+                    System.exit(0);
                 }                
             case "N":
                 System.out.println("No!");
