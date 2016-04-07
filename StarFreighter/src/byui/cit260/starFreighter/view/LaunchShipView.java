@@ -5,7 +5,9 @@
  */
 package byui.cit260.starFreighter.view;
 
+import byui.cit260.starFreighter.model.Game;
 import byui.cit260.starFreighter.model.Ship;
+import starfreighter.StarFreighter;
 
 /**
  *
@@ -59,12 +61,13 @@ public class LaunchShipView extends View
                     + "\n**************************************************************");
     }
     
-    public boolean doAction(String value) 
-    {
+    public boolean doAction(String value) {
+        Game curGame = StarFreighter.getCurrentGame();
+        Ship ship = curGame.getShip();
         switch(value)
         {
             case "Y":
-                if (Ship.fuelLevel > 0 && Ship.hull >= 90 && Ship.engine >= 90 && 
+                if (ship.getFuelLevel() > 0 && Ship.hull >= 90 && Ship.engine >= 90 && 
                     Ship.electrical >= 90 && Ship.lifeSupport >= 90)
                     this.launch();
                     return true;
