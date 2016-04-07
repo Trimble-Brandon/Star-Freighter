@@ -51,6 +51,7 @@ public class RepairMenuView extends View {
                 cost = rc.calcCost(time, skill, repaired);
                 if (cost <= mon.getQuantity()) {
                     if(cur != 100) {
+                        mon.setQuantity(mon.getQuantity() - cost);
                         ship.setHull(cur + rc.calcRepair(cur));
                         console.println("Ship's hull is now at " + ship.getHull() + "%");
                     } else {
@@ -68,6 +69,7 @@ public class RepairMenuView extends View {
                 cost = rc.calcCost(time, skill, repaired);
                 if (cost <= mon.getQuantity()) {
                     if(cur != 100) {
+                        mon.setQuantity(mon.getQuantity() - cost);
                         ship.setElectrical(cur + rc.calcRepair(cur));
                         console.println("Ship's electrical system is now at " + ship.getElectrical()+ "%");
                     } else {
@@ -85,6 +87,7 @@ public class RepairMenuView extends View {
                 cost = rc.calcCost(time, skill, repaired);
                 if (cost <= mon.getQuantity()) {
                     if(cur != 100) {
+                        mon.setQuantity(mon.getQuantity() - cost);
                         ship.setLifeSupport(cur + rc.calcRepair(cur));
                         console.println("Ship's life support system is now at " + ship.getLifeSupport() + "%");
                     } else {
@@ -102,6 +105,7 @@ public class RepairMenuView extends View {
                 cost = rc.calcCost(time, skill, repaired);
                 if (cost <= mon.getQuantity()) {
                     if(cur != 100) {
+                        mon.setQuantity(mon.getQuantity() - cost);
                         ship.setEngine(cur + rc.calcRepair(cur));
                         console.println("Ship's engine is now at " + ship.getEngine() + "%");
                     } else {
